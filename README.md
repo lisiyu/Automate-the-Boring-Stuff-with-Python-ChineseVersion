@@ -3,7 +3,7 @@ Automate the Boring Stuff with Python 中文翻译版，欢迎fork
 
 勾选表示正在翻译或已经完工，完工后的文件将出现在master分支中。
 
-- [ ] Appendix A – Installing Third-Party Modules
+- [x] Appendix A – Installing Third-Party Modules
 - [ ] Appendix B – Running Programs
 - [ ] Appendix C – Answers to the Practice Questions
 - [x] Chapter 0 – Introduction
