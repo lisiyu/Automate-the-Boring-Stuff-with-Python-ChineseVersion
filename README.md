@@ -6,7 +6,7 @@ Automate the Boring Stuff with Python 中文翻译版，欢迎fork
 - [ ] Appendix A – Installing Third-Party Modules
 - [ ] Appendix B – Running Programs
 - [ ] Appendix C – Answers to the Practice Questions
-- [ ] Chapter 0 – Introduction
+- [x] Chapter 0 – Introduction
 - [ ] Chapter 1 – Python Basics
 - [ ] Chapter 2 – Flow Control
 - [ ] Chapter 3 – Functions
