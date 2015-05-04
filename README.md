@@ -7,7 +7,7 @@ Automate the Boring Stuff with Python 中文翻译版，欢迎fork
 - [ ] Appendix B – Running Programs
 - [ ] Appendix C – Answers to the Practice Questions
 - [x] Chapter 0 – Introduction
-- [ ] Chapter 1 – Python Basics
+- [x] Chapter 1 – Python Basics
 - [ ] Chapter 2 – Flow Control
 - [ ] Chapter 3 – Functions
 - [ ] Chapter 4 – Lists
