@@ -173,6 +173,8 @@ Remember that expressions are just values combined with operators, and they alwa
 Python programs can also have text values called strings, or strs (pronounced “stirs”). Always surround your string in single quote (') characters (as in '**Hello**' or '**Goodbye cruel world!**') so Python knows where the string begins and ends. You can even have a string with no characters in it, '', called a blank string. Strings are explained in greater detail in Chapter 4.
 If you ever see the error message **SyntaxError: EOL while scanning string literal**, you probably forgot the final single quote character at the end of the string, such as in this example:
 
+Python程序也可以有一些文本值，叫做字符串，或者strs（读作“stirs”）。始终要用单引号（‘）来包裹你的字符串（就像'**Hello**' 或 '**Goodbye cruel world!**'），这样Python就知道了字符串的起始和结尾。你也可以创建没有字符的字符串，`''`，叫做空字符串。字符串将在第四章做详细介绍。
+如果你曾经见过这样的错误信息：**SyntaxError: EOL while scanning string literal**，你可能是忘记了字符串的结束引号，比如例子中这样。
 
 
 ```
@@ -181,7 +183,11 @@ SyntaxError: EOL while scanning string literal
 ```
 
 ##String Concatenation and Replication
+##字符串连接与复制
 The meaning of an operator may change based on the data types of the values next to it. For example, + is the addition operator when it operates on two integers or floating-point values. However, when + is used on two string values, it joins the strings as the string concatenation operator. Enter the following into the interactive shell:
+
+操作符的意义可能会随着它后面的变量的类型而变化。比如说，`+`对于两个整数或是浮点数的意思是加号。然而，如果把它应用于两个字符串，它会把两个字符串链接起来，作为连接操作符。在交互式命令行里输入下面的代码：
+
 
 ```
 >>> 'Alice' + 'Bob'
@@ -189,6 +195,8 @@ The meaning of an operator may change based on the data types of the values next
 ```
 
 The expression evaluates down to a single, new string value that combines the text of the two strings. However, if you try to use the + operator on a string and an integer value, Python will not know how to handle this, and it will display an error message.
+
+表达式求值得到单一的值，新的字符串把两个字符串的文本合并起来。然而，如果你尝试对一个字符串和一个整数使用＋号，Python就不知道如何应对了，它就会显示一条错误信息。
 
 ```
 >>> 'Alice' + 42
@@ -201,6 +209,9 @@ TypeError: Can't convert 'int' object to str implicitly
 
 The error message **Can't convert 'int' object to str implicitly** means that Python thought you were trying to concatenate an integer to the string '**Alice**'. Your code will have to explicitly convert the integer to a string, because Python cannot do this automatically. (Converting data types will be explained in [Dissecting Your Program]() when talking about the `str()`, `int()`, and `float()` functions.)
 
+错误信息 **Can't convert 'int' object to str implicitly** 的意思是，Python认为你尝试把一个整数连接到字符串'**Alice**'。你的代码需要显式把整数转换为字符串，因为Python不能自动完成这一步。(数据类型转换将在[Dissecting Your Program]() 中解释，当我们谈到`str()`, `int()`, 和 `float()` 函数的时。)
+
+
 ```
 >>> 'Alice' * 5
 'AliceAliceAliceAliceAlice'
@@ -208,6 +219,8 @@ The error message **Can't convert 'int' object to str implicitly** means that Py
 
 The expression evaluates down to a single string value that repeats the original a number of times equal to the integer value. String replication is a useful trick, but it’s not used as often as string concatenation.
 The * operator can be used with only two numeric values (for multiplication) or one string value and one integer value (for string replication). Otherwise, Python will just display an error message.
+表达式求值得到一个值，这个值把原始的字符串重复某个整数次。字符串复制是一个有用的技巧，但是它使用的次数并不如字符串连接那么多。＊操作符可以被用于两个数字值（做乘法）或者是一个字符串值和一个整数值（做字符串复制）。否则，Python会显示一条错误信息。
+
 
 ```
 >>> 'Alice' * 'Bob'
@@ -224,16 +237,27 @@ TypeError: can't multiply sequence by non-int of type 'float'
 
 It makes sense that Python wouldn’t understand these expressions: You can’t multiply two words, and it’s hard to replicate an arbitrary string a fractional number of times.
 
+Python不能理解这些表达式是有道理的：你不能把两个单词相乘，而且也不能把一个任意的字符串复制非整数次。
 
 ##Storing Values in Variables
+##把值存放在变量中
 A variable is like a box in the computer’s memory where you can store a single value. If you want to use the result of an evaluated expression later in your program, you can save it inside a variable.
 
+变量就像是计算机内存中的一个盒子，你可以把一个值放在里面。如果你想在之后的程序中，使用一个表达式的结果，你可以把它存放在内部变量里。
+
+
 ##Assignment Statements
+##赋值语句
 You’ll store values in variables with an assignment statement. An assignment statement consists of a variable name, an equal sign (called the assignment operator), and the value to be stored. If you enter the assignment statement spam = 42, then a variable named spam will have the integer value 42 stored in it.
 
+你会通过复制语句来把值存入变量。一条复制语句包含一个变量名，一个等于号（被称作赋值号），和一个被储存的值。如果你输入赋值语句 spam=42,然后一个叫做spam的变量中就好存放一个整数值42。
+
 Think of a variable as a labeled box that a value is placed in, as in Figure 1-2.
+把一个变量想象为一个带标签的盒子，里面放有一个值，如图1-2所示。
 
 For example, enter the following into the interactive shell:
+
+比如，在交互式shell中输入下面命令：
 
 ```
 ➊ >>> spam = 40
@@ -251,6 +275,8 @@ For example, enter the following into the interactive shell:
 
 A variable is initialized (or created) the first time a value is stored in it ➊. After that, you can use it in expressions with other variables and values ➋. When a variable is assigned a new value ➌, the old value is forgotten, which is why spam evaluated to 42 instead of 40 at the end of the example. This is called overwriting the variable. Enter the following code into the interactive shell to try overwriting a string:
 
+变量在第一次有值存入时被初始化（或创建）➊。这之后你就可以在表达式中使用它喝其他变量和值➋. 当一个变量被赋予新值时➌,旧的值就被忘记，这也是为什么在例子的最后，spam值为人42而不是40。这被称之为变量的覆盖。在交互式shell中输入下面的代码来尝试覆盖一个字符串:
+
 ```
 >>> spam = 'Hello'
 >>> spam
@@ -262,13 +288,21 @@ A variable is initialized (or created) the first time a value is stored in it �
 
 Just like the box in Figure 1-3, the spam variable in this example stores 'Hello' until you replace it with 'Goodbye'.
 
+就像图1-3中点盒子一样，本例中的spam变量存放了‘Hello',知道你用'Goodbye'覆盖了它。
+
+
 ##Variable Names
+##变量名
 Table 1-3 has examples of legal variable names. You can name a variable anything as long as it obeys the following three rules:
+表1-3列举了一些合法的变量名。只要符合以下三条规则，你可以任意命名你的变量：
 
 1. It can be only one word.
 2. It can use only letters, numbers, and the underscore (_) character.
 3. It can’t begin with a number. 
 
+1. 它只能是一个单词。
+2. 它只能使用字母，数字合下划线（`_`）。
+3. 它不能以数字开头。
 
 
 |Valid variable names|Invalid variable names|
@@ -280,21 +314,49 @@ Table 1-3 has examples of legal variable names. You can name a variable anything
 |SPAM|total_$um (special characters like $ are not allowed)|
 |account4|'hello' (special characters like ' are not allowed)|
 
+|有效变量名|无效变量名|
+|:---:|:---:|
+|balance|current-balance (`-`不允许使用)|
+|currentBalance||current balance (空格不允许使用)|
+|current_balance|4account (不能以数字开头)|
+|_spam|42 (不能以数字开头)|
+|SPAM|total_$um (像`$`这样的特殊字符不允许)|
+|account4|'hello' (像`'`这样的特殊字符不允许)|
+
+
 Variable names are case-sensitive, meaning that **spam**, **SPAM**, **Spam**, and **sPaM** are four different variables. It is a Python convention to start your variables with a lowercase letter.
 This book uses camelcase for variable names instead of underscores; that is, variables **lookLikeThis** instead of **looking_like_this**. Some experienced programmers may point out that the official Python code style, PEP 8, says that underscores should be used. I unapologetically prefer camelcase and point to “A Foolish Consistency Is the Hobgoblin of Little Minds” in PEP 8 itself:
 
+变量名区分大小写，这意味着**spam**, **SPAM**, **Spam**, 和**sPaM** 是四个不同的变量名。变量名以小写字母开头是Python的惯例。
+
+本书使用驼峰命名法，而不是下划线；也就是说，使用**lookLikeThis** 而不是**looking_like_this**。一些有经验的程序员也许会指出，官方Python代码风格PEP8认为应当使用下划线。我仍不知错的要，使用驼峰命名法，并指出PEP8中“愚蠢的一致性就像没有脑子的妖怪”一节所说：
+
 >“Consistency with the style guide is important. But most importantly: know when to be inconsistent—sometimes the style guide just doesn’t apply. When in doubt, use your best judgment.”
+
+>“与风格指南保持一致是很重要的。但是更重要的是：知道何时变的不一致——有些时候风格指南就是不适用。当你有所怀疑的时候，相信自己最好的判断”
 
 A good variable name describes the data it contains. Imagine that you moved to a new house and labeled all of your moving boxes as Stuff. You’d never find anything! The variable names spam, eggs, and bacon are used as generic names for the examples in this book and in much of Python’s documentation (inspired by the Monty Python “Spam” sketch), but in your programs, a descriptive name will help make your code more readable.
 
+一个好的变量名描述了它所存放的变量。想象着你搬进了一个新家，然后把你所有搬来的包裹都贴上了“东西”这个标签。那你就永远无法找到任何东西了！变量名spam, eggs, 还有 bacon，在本书的例子中以及Python文档中作为几个通用变量名。（受到Monty Python短剧“spam”短剧的启发），但是在你的程序中，一个描述性的名字会让你的程序更加易读。
+
+
 ##Your First Program
+##你的第一个程序
 While the interactive shell is good for running Python instructions one at a time, to write entire Python programs, you’ll type the instructions into the file editor. The file editor is similar to text editors such as Notepad or TextMate, but it has some specific features for typing in source code. To open the file editor in IDLE, select File▸New Window.
 The window that appears should contain a cursor awaiting your input, but it’s different from the interactive shell, which runs Python instructions as soon as you press ENTER. The file editor lets you type in many instructions, save the file, and run the program. Here’s how you can tell the difference between the two:
+
+尽管交互式shell很适合一次运行一条Python指令，为了写一个完整的程序，你还是会把程序输入到文件编辑器中。文件编辑器和文本编辑器类似，比如Notepad或是TextMate，但是它对于输入源代码具有一些特殊的功能。在IDLE中打开文件编辑器，选择File▸New Window。新打开的窗口中应该有一个等待你输入的光标,但是和交互式命令行有一些不同，交互式命令行在你按下回车后立即执行。文件编辑器允许你输入多项命令，保存文件，然后运行程序。以下是你如何分辨二者：
+
 
 - The interactive shell window will always be the one with the `>>>`prompt.
 - The file editor window will not have the `>>> `prompt.
 
+- 交互式shell窗口总是有`>>>`的那一个。
+- 文件编辑器是没有`>>>`的那一个。
+
 Now it’s time to create your first program! When the file editor window opens, type the following into it:
+
+现在，是时候创建你的第一个程序了！当文件编辑器开启后，输入如下命令：
 
 ```
 ➊ # This program says hello and asks for my name.
@@ -310,8 +372,14 @@ Now it’s time to create your first program! When the file editor window opens,
 ```
 
 Once you’ve entered your source code, save it so that you won’t have to retype it each time you start IDLE. From the menu at the top of the file editor window, select File▸Save As. In the Save As window, enter **hello.py** in the File Name field and then click Save.
+一旦你输入完成源代码，把它保存下来这样你就不需要在每一次启动IDLE时重复输入了。在文件编辑器顶端的菜单里面选择 File▸Save As。在保存窗口中文件名一栏输入 **hello.py** 然后点击保存。
+
 You should save your programs every once in a while as you type them. That way, if the computer crashes or you accidentally exit from IDLE, you won’t lose the code. As a shortcut, you can press CTRL-S on Windows and Linux or ⌘-S on OS X to save your file.
+当你输入一段时间后，就应该保存你的程序。这样的话，如果电脑死机了或是你不小心退出了IDLE，你不会丢失代码。说到快捷键，你可以在Windows 和 Linux上用CTRL-S或者在OS X上使用⌘-S来保存文件。 
+
 Once you’ve saved, let’s run our program. Select Run▸Run Module or just press the F5 key. Your program should run in the interactive shell window that appeared when you first started IDLE. Remember, you have to press F5 from the file editor window, not the interactive shell window. Enter your name when your program asks for it. The program’s output in the interactive shell should look something like this:
+
+一旦你完成保存，让我们运行我们的程序。选择 Run▸Run Module或按F5键。你的程序会在你第一次打开的交互式shell窗口中运行。记住，你需要在文件编辑器中按下F5，而不是交互式shell中。当程序像你询问时，输入你的名字。交互式命令行中会显示下面的内容：
 
 ```
 Python 3.3.2 (v3.3.2:d047928ae3f6, May 16 2013, 00:06:53) [MSC v.1600 64 bit
