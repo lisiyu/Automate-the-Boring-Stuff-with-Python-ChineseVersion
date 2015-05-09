@@ -401,23 +401,45 @@ You will be 5 in a year.
 When there are no more lines of code to execute, the Python program terminates; that is, it stops running. (You can also say that the Python program *exits*.)
 You can close the file editor by clicking the X at the top of the window. To reload a saved program, select File▸Open from the menu. Do that now, and in the window that appears, choose hello.py, and click the Open button. Your previously saved hello.py program should open in the file editor window.
 
+当没有代码需要被执行打时候，Python程序就终止了；意思是，停止运行。（你同样也可以说Python程序**退出**(exit)了。）
+你可以点击窗口上方的X来关闭文件编辑器。要重新载入一个保存过的程序，在菜单中选择File▸Open。现在就试一下，并且当有窗口弹出的时候，选择hello.py，然后点击打开按钮。
+你之前保存的hello.py文件应该会出现在文件编辑器窗口中。
+
+
 ##Dissecting Your Program
+##剖析你的程序
 With your new program open in the file editor, let’s take a quick tour of the Python instructions it uses by looking at what each line of code does.
 
+对你在文件编辑器中打开的文件，让我们通过观察各行代码来快速浏览一下这个程序所用到的Python指令。
+
 ###Comments
+###注释
 The following line is called a comment.
+下面这一行叫做注释。
 
 ```
 ➊ # This program says hello and asks for my name.
 ```
 
 Python ignores comments, and you can use them to write notes or remind yourself what the code is trying to do. Any text for the rest of the line following a hash mark (#) is part of a comment.
+
+Python会忽略注释，你可以利用注释来做笔记或提醒你这段代码要做的事情。#号后面所有的文本都被看作是注释的一部分。
+
+
 Sometimes, programmers will put a # in front of a line of code to temporarily remove it while testing a program. This is called commenting out code, and it can be useful when you’re trying to figure out why a program doesn’t work. You can remove the # later when you are ready to put the line back in.
+
+有时候，当程序员们测试程序的时候，会在某行代码前加一个#将这行代码临时移除。我们称之为，注释掉（comment out）代码，在你想要搞明白程序为什么不工作的时候，这是非常有用大。当你准备把这行重新加入的时候，你可以把#号移除。
+
 Python also ignores the blank line after the comment. You can add as many blank lines to your program as you want. This can make your code easier to read, like paragraphs in a book.
 
 ###The print() Function
+###print()函数
+
+2⃣️**译注：关于Python 2和Python 3的print函数用法不同，可以参考这个[链接](http://www.python-course.eu/python3_print.php)**
 
 The print() function displays the string value inside the parentheses on the screen.
+print()函数会吧括号内的字符串显示在屏幕上。
+
 
 ```
 ➋ print('Hello world!')
@@ -426,19 +448,34 @@ The print() function displays the string value inside the parentheses on the scr
 
 The line **print('Hello world!')** means “Print out the text in the string '**Hello world!**'.” When Python executes this line, you say that Python is calling the **print()** function and the string value is being passed to the function. A value that is passed to a function call is an argument. Notice that the quotes are not printed to the screen. They just mark where the string begins and ends; they are not part of the string value.
 
+**print('Hello world!')**这行代码的意思是“打印字符串中的文本‘**Hello world!**’。”当Python执行这一行的时候，你可以说Python调用了**print()**函数，同时字符串对值被传入了函数。传入函数的值我们称之为参数。注意引号并不会被打印在屏幕上。它仅仅标记了字符串的起点和结束；它们并不是字符串的一部分。
+
+
 **NOTE**
 *You can also use this function to put a blank line on the screen; just call print() with nothing in between the parentheses.*
 
+**注意**
+*你同样可以用这个函数在屏幕上输出一个空行；调用print()，括号里面什么都没有，就可以了。*
+
 When writing a function name, the opening and closing parentheses at the end identify it as the name of a function. This is why in this book you’ll see print() rather than print. Chapter 2 describes functions in more detail.
+当写下一个函数的名字时，它后面的括号会使它成为函数名。这也是为什么你在本书中会看到print()而不是print。第二章更加详细的描述了函数。
 
 ###The input() Function
+###input()函数
+
 The input() function waits for the user to type some text on the keyboard and press ENTER.
+input()函数等待用户从键盘输入一些文本，并按下回车。
 
 ```
 ➌ myName = input()
 ```
+
 This function call evaluates to a string equal to the user’s text, and the previous line of code assigns the myName variable to this string value.
+这个函数求值得到一个字符串，等同于用户输入的文本，前面一部分代码把变量名myName赋给这个字符串值。
+
 You can think of the **input()** function call as an expression that evaluates to whatever string the user typed in. If the user entered 'Al', then the expression would evaluate to **myName = 'Al'**.
+
+你可以认为**input()**被当作一个表达式调用，并且它求值得到的结果是用户输入的任何字符串。如果用户输入'Al'，那么这个表达式的值就是**myName = 'Al'**。
 
 ###Printing the User’s Name
 The following call to print() actually contains the expression '**It is good to meet you, ' + myName** between the parentheses.
@@ -448,14 +485,22 @@ The following call to print() actually contains the expression '**It is good to 
 ```
 Remember that expressions can always evaluate to a single value. If 'Al' is the value stored in myName on the previous line, then this expression evaluates to '**It is good to meet you, Al**'. This single string value is then passed to print(), which prints it on the screen.
 
+记住，表达式总是会求得唯一多值。如果'Al'是前面一行代码保存在myName中的值，那么这个表达式求值得到'**It is good to meet you, Al**'，这个单一的字符串随之被传给print()，它会把字符串打印到屏幕上。
 
 ###The len() Function
+###len()函数
+
 You can pass the len() function a string value (or a variable containing a string), and the function evaluates to the integer value of the number of characters in that string.
+你可以向len()函数传递一个字符串值（或是一个包含字符串的变量），这个函数会求值得到代表这个字符串中字符个数的一个整数值。
+
 ```
 ➎ print('The length of your name is:')
   print(len(myName))
 ```
+
 Enter the following into the interactive shell to try this:
+在交互式命令行里面输入下面代码：
+
 
 ```
 >>> len('hello')
@@ -465,7 +510,10 @@ Enter the following into the interactive shell to try this:
 >>> len('')
 0
 ```
+
 Just like those examples, len(myName) evaluates to an integer. It is then passed to print() to be displayed on the screen. Notice that print() allows you to pass it either integer values or string values. But notice the error that shows up when you type the following into the interactive shell:
+
+就像这些例子一样，`len(myName)`求值得到一个整数，然后它被传递给print()用以显示在屏幕上。注意print()允许你传递整数或者字符串。但是，当你在交互式命令行中输入如下命令的时候，请注意显示到错误信息。
 
 ```
 >>> print('I am ' + 29 + ' years old.')
@@ -477,6 +525,8 @@ TypeError: Can't convert 'int' object to str implicitly
 
 The **print()** function isn’t causing that error, but rather it’s the expression you tried to pass to print(). You get the same error message if you type the expression into the interactive shell on its own.
 
+并不是**print()**引起了错误，而是你传递进print()的表达式。你把这个表达式单独输入交互式命令后，也会得到同样的错误信息。
+ 
 ```
 >>> 'I am ' + 29 + ' years old.'
 Traceback (most recent call last):
