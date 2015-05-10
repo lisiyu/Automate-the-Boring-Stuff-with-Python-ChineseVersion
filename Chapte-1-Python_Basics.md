@@ -5,6 +5,7 @@
 ##Python基础
 The Python programming language has a wide range of syntactical constructions, standard library functions, and interactive development environment features. Fortunately, you can ignore most of that; you just need to learn enough to write some handy little programs.
 You will, however, have to learn some basic programming concepts before you can do anything. Like a wizard-in-training, you might think these concepts seem arcane and tedious, but with some knowledge and practice, you’ll be able to command your computer like a magic wand to perform incredible feats.
+
 Python这门编程语言有很多句法结构，标准库函数，和交互式开发环境特性。幸运的事，其中大部分你都可以忽略；你只需要学习一些知识，让你能够随手编写小程序即可。然而，你需要在开始前学习一些编程的基本概念。像见习巫师一样，你可能会认为这些概念看上去晦涩又乏味，但是具备了一定的知识，加上一些练习，你就可以像使用魔杖那样，让你的电脑完成了不起的工作
 
 This chapter has a few examples that encourage you to type into the interactive shell, which lets you execute Python instructions one at a time and shows you the results instantly. Using the interactive shell is great for learning what basic Python instructions do, so give it a try as you follow along. You’ll remember the things you do much better than the things you only read.
@@ -123,9 +124,9 @@ These rules for putting operators and values together to form expressions are a 
 这些把操作符和变量放在一起构成表达式的规则，是Python这门编程语言的基础，就像帮助我们交流的语法一样。这里有一个例子：
 
 - This is a grammatically correct English sentence.
-- This grammatically is sentence not English correct a.
+- This grammatically is sentence not English correct a.  
 
-- 这是一个语法正确的中文句子
+- 这是一个语法正确的中文句子  
 - 这是语法是句子不是中文正确的一个
 
 
@@ -537,8 +538,15 @@ TypeError: Can't convert 'int' object to str implicitly
 
 Python gives an error because you can use the + operator only to add two integers together or concatenate two strings. You can’t add an integer to a string because this is ungrammatical in Python. You can fix this by using a string version of the integer instead, as explained in the next section.
 
+Python输出了一条错误信息，因为你只可以用+操作符把两个整数相加或是连接两个字符串。你不能把一个整数和一个字符串相加，因为这不符合Python语法。你可以可以使用这个整数的字符串版本来修复这个问题，就像我们下一节将要讲的那样。
+
+
 ###The str(), int(), and float() Functions
+###str(), int(),和float()函数
 If you want to concatenate an integer such as 29 with a string to pass to print(), you’ll need to get the value '29', which is the string form of 29. The str() function can be passed an integer value and will evaluate to a string value version of it, as follows:
+
+如果你想要把一个整数，例如29和一个字符串连接起来传入print()函数，你需要得到'29'这个值，它是29的字符串形式。str()函数可以传入一个整数值并且会求得它的一个字符串版本，就像下面这样：
+
 
 ```
 >>> str(29)
@@ -548,7 +556,12 @@ I am 29 years old.
 ```
 
 Because str(29) evaluates to '29', the expression 'I am ' + str(29) + ' years old.' evaluates to 'I am ' + '29' + ' years old.', which in turn evaluates to 'I am 29 years old.'. This is the value that is passed to the print() function.
+
+因为str(29)求值得到‘29’，表达式'I am ' + str(29) + ' years old .'求值得到'I am ' + '29' + ' years old.'，随后求值得到'I am 29 years old.'。这就是传入print()的值。
+
 The str(), int(), and float() functions will evaluate to the string, integer, and floating-point forms of the value you pass, respectively. Try converting some values in the interactive shell with these functions, and watch what happens.
+str(), int(),和float()函数会分别求值得出传入值的字符串，整型，和浮点型版本。在交互式shell中尝试使用这些函数来转换一些值，看看会发生什么？
+
 
 ```
 >>> str(0)
@@ -570,7 +583,11 @@ The str(), int(), and float() functions will evaluate to the string, integer, an
 ```
 
 The previous examples call the str(), int(), and float() functions and pass them values of the other data types to obtain a string, integer, or floating-point form of those values.
+前面的代码调用了str(), int(), 以及float()函数，并且向他们传递其他的数据类型，来得到它们字符串，整型或是浮点型版本。
+
 The str() function is handy when you have an integer or float that you want to concatenate to a string. The int() function is also helpful if you have a number as a string value that you want to use in some mathematics. For example, the input() function always returns a string, even if the user enters a number. Enter **spam = input()** into the interactive shell and enter **101** when it waits for your text.
+
+当你想要把一个整型或浮点型数与字符串相连时，str()函数非常方便好用。当你想要用一个字符串类型的数做数学运算的时候，int()函数同样很有用。例如，input()函数总是返回一个字符串，即使你输入的是一个数字。在交互式shell中输入**spam = input()**，并且在当它等待你输入时，输入**101**。
 
 ```
 >>> spam = input()
@@ -580,6 +597,8 @@ The str() function is handy when you have an integer or float that you want to c
 ```
 
 The value stored inside spam isn’t the integer 101 but the string '101'. If you want to do math using the value in spam, use the int() function to get the integer form of spam and then store this as the new value in spam.
+存放在spam变量中的值并不是整型的101。而是字符串‘101’。如果你先要用这个值做数学运算，使用int()函数来获取spam的整型版本，并把它作为一个新的值存放在spam中。
+
 
 ```
 >>> spam = int(spam)
@@ -589,12 +608,16 @@ The value stored inside spam isn’t the integer 101 but the string '101'. If yo
 
 Now you should be able to treat the spam variable as an integer instead of a string.
 
+现在，你可以把spam看作一个整型而不是字符串了。
+
 ```
 >>> spam * 10 / 5
 202.0
 ```
 
 Note that if you pass a value to int() that it cannot evaluate as an integer, Python will display an error message.
+
+注意到如果你把一个不可以转换为整数的值传递给int()，Python会显示一条错误信息。
 
 ```
 >>> int('99.99')
@@ -611,6 +634,8 @@ ValueError: invalid literal for int() with base 10: 'twelve'
 
 The int() function is also useful if you need to round a floating-point number down. If you want to round a floating-point number up, just add 1 to it afterward.
 
+如果你想要对一个浮点数进行向下取整，int()函数同样很有用，如果想进行向上取整，只需要紧接着加1即可。
+
 ```
 >>> int(7.7)
 7
@@ -619,6 +644,7 @@ The int() function is also useful if you need to round a floating-point number d
 ```
 
 In your program, you used the int() and str() functions in the last three lines to get a value of the appropriate data type for the code.
+在你的程序中，你在最后三行使用int()和str()函数来获取代码所需要的合适的数据类型。
 
 ```
 ➏ print('What is your age?') # ask for their age
@@ -628,27 +654,41 @@ In your program, you used the int() and str() functions in the last three lines 
 
 The myAge variable contains the value returned from input(). Because the input() function always returns a string (even if the user typed in a number), you can use the int(myAge) code to return an integer value of the string in myAge. This integer value is then added to 1 in the expression int(myAge) + 1.
 
+myAge变量包含了从input()返回的值。因为input()函数总是返回一个字符串（即使你输入了一个数字），你可以使用int(myAge)来返回myAge中字符串的整数值。这个整数值随后在表达式int(myAge)+1中被加1。
+
 The result of this addition is passed to the str() function: str(int(myAge) + 1). The string value returned is then concatenated with the strings 'You will be ' and ' in a year.' to evaluate to one large string value. This large string is finally passed to print() to be displayed on the screen.
+这次相加的结果被传递给str()函数：str(int(myAge) + 1)。函数返回的字符串随后与'You will be '和' in a year.'连接得到一个更长的字符串。这个字符串最终被传递给print()函数，来显示在屏幕上。
+
 
 Let’s say the user enters the string '4' for myAge. The string '4' is converted to an integer, so you can add one to it. The result is 5. The str() function converts the result back to a string, so you can concatenate it with the second string, 'in a year.', to create the final message. These evaluation steps would look something like Figure 1-4.
 
+让我们假设用户输入了字符串'4'作为年龄。字符串'4'会被转换为一个整型，所以你可以对其＋1。str()函数把结果转换回字符串，所以你可以把它喝第二个字符串'in a year.'得到最终消息。求值步骤看上去像图1-4表示的那样。
+
 
 ##Summary
+##总结
 You can compute expressions with a calculator or type string concatenations with a word processor. You can even do string replication easily by copying and pasting text. But expressions, and their component values—operators, variables, and function calls—are the basic building blocks that make programs. Once you know how to handle these elements, you will be able to instruct Python to operate on large amounts of data for you.
+
+你可以使用计算器来求解表达式或者用词处理器来连接输入的字符串。你甚至可以通过复制粘贴文本来复制字符串。但是，表达式，以及它们的组成部分值－操作符，变量和函数调用是构建程序的基础素材。一旦你了解了如何处理这些元素，你就可以命令Python来为你操作大量的数据。
 
 It is good to remember the different types of operators (+, -, *, /, //, %, and ** for math operations, and + and * for string operations) and the three data types (integers, floating-point numbers, and strings) introduced in this chapter.
 
+记住本章介绍的不同类型的操作符 (+, -, *, /, //, %, 和 ** 这些算数操作符,以及 + 和 * 这样的字符串操作符) 以及三种数据类型 (整型, 浮点型, 和字符串)是有益的。
+
 A few different functions were introduced as well. The print() and input() functions handle simple text output (to the screen) and input (from the keyboard). The len() function takes a string and evaluates to an int of the number of characters in the string. The str(), int(), and float() functions will evaluate to the string, integer, or floating-point number form of the value they are passed.
+
+同时还介绍了一些不同的函数。print() 和 input()函数处理简单的输出 (到屏幕)和输入(从键盘)。 len()函数获取一个字符串，求出字符串中包含字符的整型值。str(), int(), 和float()函数会得到传入值的字符串型，整型和浮点型值。
 
 In the next chapter, you will learn how to tell Python to make intelligent decisions about what code to run, what code to skip, and what code to repeat based on the values it has. This is known as flow control, and it allows you to write programs that make intelligent decisions.
 
-
+在下一章中，你会学习如何让Python做出智能的判断，决定该执行哪些代码，跳过哪些代码以及哪些代码需要基于某个值重复执行。这些被称作流控制（flow control），它允许你写出可以进行智能决断的程序。
 
 
 ##Practice Questions
-
+##练习问题
 Q:
-1. Which of the following are operators, and which are values?
+1. Which of the following are operators, and which are values?  
+1. 下面哪些是操作符，哪些是值？
 
 ```
 *
@@ -660,49 +700,59 @@ Q:
 5
 ```
 Q:
-2. Which of the following is a variable, and which is a string?
+2. Which of the following is a variable, and which is a string?  
+2. 下面哪个是变量，哪个是字符串？
 
 ```
 spam
 'spam'
 ```
 Q:
-3. Name three data types.
+3. Name three data types.  
+3. 指出三种数据类型。
+
+Q:
+4. What is an expression made up of? What do all expressions do?  
+4. 表达式由什么组成？所以的表达式都在做些什么？
 
 
 Q:
-4. What is an expression made up of? What do all expressions do?
-
-
-Q:
-5. This chapter introduced assignment statements, like spam = 10. What is the difference between an expression and a statement?
-
+5. This chapter introduced assignment statements, like spam = 10. What is the difference between an expression and a statement?  
+5. 本章介绍了赋值语句，例如spam = 10，表达式和语句的区别是什么？
 
 Q:
-6. What does the variable bacon contain after the following code runs?
+6. What does the variable bacon contain after the following code runs?  
+6. 下面这段代码执行后变量bacon中的值是什么？  
 ```
 bacon = 20
 bacon + 1
 ```
 
 Q:
-7. What should the following two expressions evaluate to?
+7. What should the following two expressions evaluate to?  
+7.下面这两个表达式求值是什么？  
+
 ```
 'spam' + 'spamspam'
 'spam' * 3
 ```
 
 Q:
-8. Why is eggs a valid variable name while 100 is invalid?
+8. Why is eggs a valid variable name while 100 is invalid?  
+8. 为什么100不是合法变量名，egg却是合法的？
 
 
 Q:
-9. What three functions can be used to get the integer, floating-point number, or string version of a value?
+9. What three functions can be used to get the integer, floating-point number, or string version of a value?  
+9. 那三个函数可以被用来获取一个值的整型，浮点型数或是字符串版本？
 
 Q:
-10. Why does this expression cause an error? How can you fix it?
+10. Why does this expression cause an error? How can you fix it?  
+10. 为什么下面表达式会引起错误？如何修改？   
 ```
 'I have eaten ' + 99 + ' burritos.'
 ```
 
-Extra credit: Search online for the Python documentation for the len() function. It will be on a web page titled “Built-in Functions.” Skim the list of other functions Python has, look up what the round() function does, and experiment with it in the interactive shell.
+Extra credit: Search online for the Python documentation for the len() function. It will be on a web page titled “Built-in Functions.” Skim the list of other functions Python has, look up what the round() function does, and experiment with it in the interactive shell.  
+
+加分题：在网上搜索Python文档关于len()函数的内容。它会出现在一个叫做“Built-in Functions.” 的页面里。浏览一下列出的其他Python函数，查看round()是做什么的，并且在交互式命令后里面测试它。
