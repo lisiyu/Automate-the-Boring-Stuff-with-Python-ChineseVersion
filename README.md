@@ -1,5 +1,5 @@
 # Automate-the-Boring-Stuff-with-Python-ChineseVersion
-Automate the Boring Stuff with Python 中文翻译版，欢迎fork
+[Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) 中文翻译版，欢迎fork
 
 勾选表示正在翻译或已经完工，完工后的文件将出现在master分支中。
 
@@ -8,7 +8,7 @@ Automate the Boring Stuff with Python 中文翻译版，欢迎fork
 - [ ] Appendix C – Answers to the Practice Questions
 - [x] Chapter 0 – Introduction
 - [x] Chapter 1 – Python Basics
-- [ ] Chapter 2 – Flow Control
+- [x] Chapter 2 – Flow Control
 - [ ] Chapter 3 – Functions
 - [ ] Chapter 4 – Lists
 - [ ] Chapter 5 – Dictionaries and Structuring Data
