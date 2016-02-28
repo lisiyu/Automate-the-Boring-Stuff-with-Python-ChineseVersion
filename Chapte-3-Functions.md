@@ -1,17 +1,17 @@
 # Functions
 ## https://youtu.be/WB4hJJkfhLU
 
-#### You¡¯re already familiar with the print(), input(), and len() functions from the previous chapters. 
+#### Youâ€™re already familiar with the print(), input(), and len() functions from the previous chapters. 
 #### Python provides several builtin functions like these, but you can also write your own functions. 
 #### A function is like a mini-program within a program.
 
-#### ÔÚÇ°ÃæµÄÕÂ½ÚÄãÒÑ¾­ÊìÏ¤µÄprint()£¬input()ºÍLEN()º¯Êı¡£
-#### PythonÌá¹©ÁËÒ»Ğ©ÕâÑùµÄÄÚ½¨º¯Êı£¬ÄãÒ²¿ÉÒÔ±àĞ´×Ô¼ºµÄº¯Êı¡£
-#### º¯Êı¾ÍÏñÒ»¸ö³ÌĞòÖĞµÄÒ»¸öĞ¡³ÌĞò¡£
+#### åœ¨å‰é¢çš„ç« èŠ‚ä½ å·²ç»ç†Ÿæ‚‰çš„print()ï¼Œinput()å’Œlen()å‡½æ•°ã€‚
+#### Pythonæä¾›äº†ä¸€äº›è¿™æ ·çš„å†…å»ºå‡½æ•°ï¼Œä½ ä¹Ÿå¯ä»¥ç¼–å†™è‡ªå·±çš„å‡½æ•°ã€‚
+#### å‡½æ•°å°±åƒä¸€ä¸ªç¨‹åºä¸­çš„ä¸€ä¸ªå°ç¨‹åºã€‚
 
-#### To better understand how functions work, let¡¯s create one. Type this program into the file editor and save it as helloFunc.py:
+#### To better understand how functions work, letâ€™s create one. Type this program into the file editor and save it as helloFunc.py:
 
-#### Àí½âº¯ÊıµÄ¹¤×÷Ô­ÀíµÄ×îºÃ·½·¨ÊÇÎÒÃÇ´´½¨Ò»¸öÊÔÊÔ¡£ÔÚÎÄ¼ş±à¼­Æ÷ÀïÃæÊäÈëÕâ¶Î´úÂëµ½²¢±£´æÎªhelloFunc.py£º
+#### ç†è§£å‡½æ•°çš„å·¥ä½œåŸç†çš„æœ€å¥½æ–¹æ³•æ˜¯æˆ‘ä»¬åˆ›å»ºä¸€ä¸ªè¯•è¯•ã€‚åœ¨æ–‡ä»¶ç¼–è¾‘å™¨é‡Œé¢è¾“å…¥è¿™æ®µä»£ç åˆ°å¹¶ä¿å­˜ä¸ºhelloFunc.pyï¼š
 
 def hello():
 	print('Howdy!')
@@ -22,14 +22,14 @@ hello()
 hello()
 
 #### The first line is a def statement [1], which defines a function named hello().
-#### The code in the block that follows the def statement[2]£¬ is the body of the function. 
+#### The code in the block that follows the def statement[2]ï¼Œ is the body of the function. 
 #### This code is executed when the function is called, not when the function is first defined.
 
-#### µÚÒ»ĞĞµÄdefÎÒÃÇ³ÉÎªº¯ÊıÉùÃ÷Óï¾ä¡£defÎªº¯ÊıÉùÃ÷¹Ø¼ü´Ê¡£ÎÒÃÇ½«Õâ¸öº¯ÊıÃû³Æ¶¨ÒåÎªhello.
-#### ½ô¸ú×Åº¯ÊıÉùÃ÷Óï¾äµÄ´úÂë¿éÎÒÃÇ³ÉÎªº¯ÊıÌå¡£
-#### µ±º¯Êı±»µ÷ÓÃµÄÊ±ºòº¯ÊıµÄ´úÂë²Å»áÖ´ĞĞ£¬¶ø²»ÊÇÔÚÊ×´Î¶¨Òåº¯ÊıµÄÊ±ºòÖ´ĞĞ¸Ã´úÂë¡£
+#### ç¬¬ä¸€è¡Œçš„defæˆ‘ä»¬æˆä¸ºå‡½æ•°å£°æ˜è¯­å¥ã€‚defä¸ºå‡½æ•°å£°æ˜å…³é”®è¯ã€‚æˆ‘ä»¬å°†è¿™ä¸ªå‡½æ•°åç§°å®šä¹‰ä¸ºhello.
+#### ç´§è·Ÿç€å‡½æ•°å£°æ˜è¯­å¥çš„ä»£ç å—æˆ‘ä»¬æˆä¸ºå‡½æ•°ä½“ã€‚
+#### å½“å‡½æ•°è¢«è°ƒç”¨çš„æ—¶å€™å‡½æ•°çš„ä»£ç æ‰ä¼šæ‰§è¡Œï¼Œè€Œä¸æ˜¯åœ¨é¦–æ¬¡å®šä¹‰å‡½æ•°çš„æ—¶å€™æ‰§è¡Œè¯¥ä»£ç ã€‚
 
-#### The hello() lines after the function are function calls. In code,  a function call is  just the  function¡¯s name 
+#### The hello() lines after the function are function calls. In code,  a function call is  just the  functionâ€™s name 
 #### followed by  parentheses, possibly with some number of arguments in between the parentheses.  When the  program execution
 #### reaches these  calls, it  will jump  to the  top line  in the function and begin executing the code there. When it reaches the end 
 #### of the function, the execution eturns to the line  that called the function  and continues moving through  the code as before. 
@@ -46,9 +46,9 @@ Howdy!
 Howdy!!!
 Hello there.
 
-#### ×îºóÈıĞĞµÄhello()ÎÒÃÇ³ÆÖ®Îªº¯Êıµ÷ÓÃ¡£º¯Êıµ÷ÓÃ½ö½öĞèÒªº¯ÊıÃûºÍ½ô¸ú×ÅµÄÀ¨ºÅ£¬À¨ºÅÀïÃæ°üº¬¼¸¸öÕâ¸öº¯ÊıËù¶¨ÒåµÄ²ÎÊı¡£µ±³ÌĞòÖ´ĞĞµ½
-#### º¯Êıµ÷ÓÃµÄÊ±ºò»á×Ô¶¯Ìø×ªµ½Õâ¸öº¯ÊıÉùÃ÷µÄÎ»ÖÃ²¢¿ªÊ¼Ö´ĞĞº¯Êı´úÂë¡£µ±º¯Êı¹¦ÄÜµÄ½áÊøÊ±£¬Ö´ĞĞ·µ»Øµ½µ÷ÓÃº¯ÊıÎ»ÖÃ£¬²¢¼ÌĞøÖ´ĞĞÏÂÃæµÄ´úÂë¡£
-#### ÒòÎªÕâ¶Î´úÂëµ÷ÓÃÁËÈı´Îhello()º¯ÊıËùÒÔhello()º¯Êı±»Ö´ĞĞÁËÈı´Î¡£µ±ÄãÔËĞĞÕâ¶Î´úÂëÊ±Êä³ö½á¹ûÈçÏÂ£º
+#### æœ€åä¸‰è¡Œçš„hello()æˆ‘ä»¬ç§°ä¹‹ä¸ºå‡½æ•°è°ƒç”¨ã€‚å‡½æ•°è°ƒç”¨ä»…ä»…éœ€è¦å‡½æ•°åå’Œç´§è·Ÿç€çš„æ‹¬å·ï¼Œæ‹¬å·é‡Œé¢åŒ…å«å‡ ä¸ªè¿™ä¸ªå‡½æ•°æ‰€å®šä¹‰çš„å‚æ•°ã€‚å½“ç¨‹åºæ‰§è¡Œåˆ°
+#### å‡½æ•°è°ƒç”¨çš„æ—¶å€™ä¼šè‡ªåŠ¨è·³è½¬åˆ°è¿™ä¸ªå‡½æ•°å£°æ˜çš„ä½ç½®å¹¶å¼€å§‹æ‰§è¡Œå‡½æ•°ä»£ç ã€‚å½“å‡½æ•°åŠŸèƒ½çš„ç»“æŸæ—¶ï¼Œæ‰§è¡Œè¿”å›åˆ°è°ƒç”¨å‡½æ•°ä½ç½®ï¼Œå¹¶ç»§ç»­æ‰§è¡Œä¸‹é¢çš„ä»£ç .
+#### å› ä¸ºè¿™æ®µä»£ç è°ƒç”¨äº†ä¸‰æ¬¡hello()å‡½æ•°æ‰€ä»¥hello()å‡½æ•°è¢«æ‰§è¡Œäº†ä¸‰æ¬¡ã€‚å½“ä½ è¿è¡Œè¿™æ®µä»£ç æ—¶è¾“å‡ºç»“æœå¦‚ä¸‹ï¼š
 Howdy!
 Howdy!!!
 Hello there.
