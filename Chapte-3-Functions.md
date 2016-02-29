@@ -206,4 +206,5 @@ You can add keyword arguments to the functions you write as well, but first you�
 您可以添加关键字参数给你写的函数，但首先你必须在接下来的两个章节学习列表类型和字典数据类型。现在你只需要知道一些函数在被调用时可以指定可选关键字参数。
 
 ## Local and Global Scope
-## https://youtu.be/M-CoVBK_bLE
+## 局部和全局范围
+## https://youtu.be/M-CoVBK_bLE对应的教学视频
