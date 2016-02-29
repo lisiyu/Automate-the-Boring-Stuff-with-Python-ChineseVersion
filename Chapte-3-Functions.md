@@ -156,9 +156,9 @@ In Python there is a value called None, which represents the absence of a value.
 
 This value-without-a-value can be helpful when you need to store something that won’t be confused for a real value in a variable. One place where None is used is as the return value of print(). The print() function displays text on the screen, but it doesn’t need to return anything in the same way len() or input() does. But since all function calls need to evaluate to a return value, print() returns None. To see this in action, enter the following into the interactive shell:
 当你需要在变量中存储一个无法定义的数值时，空值就会变得非常有用。空值有一个常用的地方就是作为print()函数执行后的返回值。print()函数的功能是把字符打印到屏幕上，但是他又不能像len()或input()函数一样执行后返回一个真实存在的值。但所有函数执行完成后都需要一个返回值，print()函数返回为空值。想看到空值的作用请在交互窗口中输入如下代码：
->>> spam = print('Hello!')
+spam = print('Hello!')
 Hello!
->>> None == spam
+None == spam
 True
 
 Behind the scenes, Python adds return None to the end of any function definition with no return statement. This is similar to how a while or for loop implicitly ends with a continue statement. Also, if you use a return statement without a value (that is, just the return keyword by itself), then None is returned.
@@ -194,12 +194,12 @@ The output is printed on a single line because there is no longer a new-line pri
 
 Similarly, when you pass multiple string values to print(), the function will automatically separate them with a single space. Enter the following into the interactive shell:
 同样，当你使用print（）函数打印多个字符串值，该功能会自动将这些用一个空格分开。输入以下内容：
->>> print('cats', 'dogs', 'mice')
+print('cats', 'dogs', 'mice')
 cats dogs mice
 
 But you could replace the default separating string by passing the sep keyword argument. Enter the following into the interactive shell:
 但是你可以通过传递sep关键字参数替换默认的分隔字符串。在交互窗体输入以下代码：
->>> print('cats', 'dogs', 'mice', sep=',')
+print('cats', 'dogs', 'mice', sep=',')
 cats,dogs,mice
 
 You can add keyword arguments to the functions you write as well, but first you’ll have to learn about the list and dictionary data types in the next two chapters. For now, just know that some functions have optional keyword arguments that can be specified when the function is called.
