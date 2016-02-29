@@ -148,3 +148,5 @@ print(getAnswer(random.randint(1, 9)))
 Remember, expressions are composed of values and operators. A function call can be used in an expression because it evaluates to its return value.
 请记住，表达式是由值和运算符组成。函数调用可以在表达式中使用，因为表达式的计算结果就是它的返回值。
 
+## The None Value
+## 空值
