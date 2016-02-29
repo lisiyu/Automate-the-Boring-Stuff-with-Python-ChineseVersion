@@ -150,3 +150,60 @@ Remember, expressions are composed of values and operators. A function call can 
 
 ## The None Value
 ## 空值
+
+In Python there is a value called None, which represents the absence of a value. None is the only value of the NoneType data type. (Other programming languages might call this value null, nil, or undefined.) Just like the Boolean True and False values, None must be typed with a capital N.
+在python中有一个表示不存在的值，NoneType数据类型的唯一值，我们称其为空值。在其他编程语言中可能叫做空或者未定义值。这个值就像布尔True和False值，空值必须以大写N开头写为None.
+
+This value-without-a-value can be helpful when you need to store something that won’t be confused for a real value in a variable. One place where None is used is as the return value of print(). The print() function displays text on the screen, but it doesn’t need to return anything in the same way len() or input() does. But since all function calls need to evaluate to a return value, print() returns None. To see this in action, enter the following into the interactive shell:
+当你需要在变量中存储一个无法定义的数值时，空值就会变得非常有用。空值有一个常用的地方就是作为print()函数执行后的返回值。print()函数的功能是把字符打印到屏幕上，但是他又不能像len()或input()函数一样执行后返回一个真实存在的值。但所有函数执行完成后都需要一个返回值，print()函数返回为空值。想看到空值的作用请在交互窗口中输入如下代码：
+>>> spam = print('Hello!')
+Hello!
+>>> None == spam
+True
+
+Behind the scenes, Python adds return None to the end of any function definition with no return statement. This is similar to how a while or for loop implicitly ends with a continue statement. Also, if you use a return statement without a value (that is, just the return keyword by itself), then None is returned.
+在幕后，python在任何未定义返回参数的函数末尾增加了返回空值语句。这就好像for循环和whlie循环在末尾隐藏了一个continue语句。另外，如果使用return语句没有返回值（即，只返回关键字本身）这个时候就会返回空值。
+
+## Keyword Arguments and print()
+## 关键字参数和print()函数
+
+Most arguments are identified by their position in the function call. For example, random.randint(1, 10) is different from random.randint(10, 1). The function call random.randint(1, 10) will return a random integer between 1 and 10, because the first argument is the low end of the range and the second argument is the high end (while random.randint(10, 1) causes an error).
+大多数参数都是由它们在函数调用位置来识别。例如，random.randint（1，10和random.randint（10，1）不同。函数调用random.randint（1，10）将返回1和10之间的随机整数，因为第一个参数是random函数的最小值，第二个参数是最大值。如果写成random.randint(10, 1)就会出错。
+
+However, keyword arguments are identified by the keyword put before them in the function call. Keyword arguments are often used for optional parameters. For example, the print() function has the optional parameters end and sep to specify what should be printed at the end of its arguments and between its arguments (separating them), respectively.
+If you ran the following program:
+但是关键字参数是在他们函数调用之前通过关键字进行定义和区分的。关键字参数通常是可选参数。例如，print()函数具有可选参数end和spe两个可选参数.end这个参数可以指定在其结尾换行或继续打印。spe参数则可以在多个参数之间打印一些特殊字符如逗号等。当你运行下面的程序：
+print('Hello')
+print('World')
+the output would look like this:
+运行结果如下：
+Hello
+World
+
+The two strings appear on separate lines because the print() function automatically adds a newline character to the end of the string it is passed. However, you can set the end keyword argument to change this to a different string. For example, if the program were this:
+这两个字符串出现在不同的行上，因为print（）函数会自动添加一个换行符在字符串的结尾。但是，您可以将end关键字参数更改为不同的字符串。
+例如，如果程序是这样的:
+print('Hello', end='')
+print('World')
+the output would look like this:
+程序运行结果是两个字符在同一行。
+HelloWorld
+
+The output is printed on a single line because there is no longer a new-line printed after 'Hello'. Instead, the blank string is printed. This is useful if you need to disable the newline that gets added to the end of every print() function call.
+输出显示在一行，因为不再有换行符在“Hello”打印之后。取而代之的是空字符串。如果你需要禁用每一个print（）函数调用结束的换行符，这是非常有用的。
+
+Similarly, when you pass multiple string values to print(), the function will automatically separate them with a single space. Enter the following into the interactive shell:
+同样，当你使用print（）函数打印多个字符串值，该功能会自动将这些用一个空格分开。输入以下内容：
+>>> print('cats', 'dogs', 'mice')
+cats dogs mice
+
+But you could replace the default separating string by passing the sep keyword argument. Enter the following into the interactive shell:
+但是你可以通过传递sep关键字参数替换默认的分隔字符串。在交互窗体输入以下代码：
+>>> print('cats', 'dogs', 'mice', sep=',')
+cats,dogs,mice
+
+You can add keyword arguments to the functions you write as well, but first you’ll have to learn about the list and dictionary data types in the next two chapters. For now, just know that some functions have optional keyword arguments that can be specified when the function is called.
+您可以添加关键字参数给你写的函数，但首先你必须在接下来的两个章节学习列表类型和字典数据类型。现在你只需要知道一些函数在被调用时可以指定可选关键字参数。
+
+## Local and Global Scope
+## https://youtu.be/M-CoVBK_bLE
