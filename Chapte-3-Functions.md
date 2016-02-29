@@ -44,8 +44,8 @@ Hello there.
  最后三行的hello()我们称之为函数调用。函数调用仅仅需要函数名和紧跟着的括号，括号里面包含几个这个函数所定义的参数。当程序执行到
  函数调用的时候会自动跳转到这个函数声明的位置并开始执行函数代码。当函数功能的结束时，执行返回到调用函数位置，并继续执行下面的代码.
  因为这段代码调用了三次hello()函数所以hello()函数被执行了三次。当你运行这段代码时输出结果如下：
-Howdy!
-Howdy!!!
+Howdy!  
+Howdy!!!  
 Hello there.
 Howdy!
 Howdy!!!
@@ -183,8 +183,8 @@ World
 The two strings appear on separate lines because the print() function automatically adds a newline character to the end of the string it is passed. However, you can set the end keyword argument to change this to a different string. For example, if the program were this:
 这两个字符串出现在不同的行上，因为print（）函数会自动添加一个换行符在字符串的结尾。但是，您可以将end关键字参数更改为不同的字符串。
 例如，如果程序是这样的:
-print('Hello', end='')
-print('World')
+print('Hello', end='')  
+print('World')  
 the output would look like this:
 程序运行结果是两个字符在同一行。
 HelloWorld
@@ -194,12 +194,12 @@ The output is printed on a single line because there is no longer a new-line pri
 
 Similarly, when you pass multiple string values to print(), the function will automatically separate them with a single space. Enter the following into the interactive shell:
 同样，当你使用print（）函数打印多个字符串值，该功能会自动将这些用一个空格分开。输入以下内容：
-print('cats', 'dogs', 'mice')
+print('cats', 'dogs', 'mice')  
 cats dogs mice
 
 But you could replace the default separating string by passing the sep keyword argument. Enter the following into the interactive shell:
 但是你可以通过传递sep关键字参数替换默认的分隔字符串。在交互窗体输入以下代码：
-print('cats', 'dogs', 'mice', sep=',')
+print('cats', 'dogs', 'mice', sep=',')  
 cats,dogs,mice
 
 You can add keyword arguments to the functions you write as well, but first you’ll have to learn about the list and dictionary data types in the next two chapters. For now, just know that some functions have optional keyword arguments that can be specified when the function is called.
