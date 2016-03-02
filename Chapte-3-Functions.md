@@ -107,27 +107,27 @@ When you call the len() function and pass it an argument such as 'Hello', the fu
 
 When an expression is used with a return statement, the return value is what this expression evaluates to. For example, the following program defines a function that returns a different string depending on what number it is passed as an argument. Type this code into the file editor and save it as magic8Ball.py:  
 当用表达式来定义返回语句时，返回值就是表达式的运算结果。举例，下面程序不同的数字作为参数时将返回不同的字符串。在文件编辑器中编写下面的代码并保存为magic8Ball.py:  
-	
+		
 	import random  
 	def getAnswer(answerNumber):  
 		if answerNumber == 1:
 			return 'It is certain'  
 		elif answerNumber == 2:  
-           		return 'It is decidedly so'  
-       		elif answerNumber == 3:  
-           		return 'Yes'  
-       		elif answerNumber == 4:  
-           		return 'Reply hazy try again'
-       		elif answerNumber == 5:  
-           		return 'Ask again later'  
+			return 'It is decidedly so'  
+		elif answerNumber == 3:  
+			return 'Yes'  
+		elif answerNumber == 4:  
+			return 'Reply hazy try again'
+		elif answerNumber == 5:  
+			return 'Ask again later'  
 		elif answerNumber == 6:  
-        		return 'Concentrate and ask again'  
-       		elif answerNumber == 7:  
-           		return 'My reply is no'  
+			return 'Concentrate and ask again'  
+		elif answerNumber == 7:  
+			return 'My reply is no'  
 		elif answerNumber == 8:  
-           		return 'Outlook not so good'  
-       		elif answerNumber == 9:  
-           		return 'Very doubtful'  
+			return 'Outlook not so good'  
+		elif answerNumber == 9:  
+			return 'Very doubtful'  
 	r = random.randint(1, 9)  
 	fortune = getAnswer(r)  
 	print(fortune)  
@@ -249,8 +249,8 @@ While using global variables in small programs is fine, it is a bad habit to rel
 ### Local Variables Cannot Be Used in the Global Scope
 ### 局部变量不能用在全局范围  
 
-Consider this program, which will cause an error when you run it:
-思考下运行下面这个程序时，将出现什么错误：
+Consider this program, which will cause an error when you run it:  
+思考下运行下面这个程序时，将出现什么错误：  
 	
 	def spam():  
 		eggs = 31337  
@@ -258,7 +258,7 @@ Consider this program, which will cause an error when you run it:
 	print(eggs)   
 
 If you run this program, the output will look like this:  
-如果你运行这个程序会输出如下的错误提示：
+如果你运行这个程序会输出如下的错误提示：  
 Traceback (most recent call last):  
   File "C:/test3784.py", line 4, in <module>  
     print(eggs)  
