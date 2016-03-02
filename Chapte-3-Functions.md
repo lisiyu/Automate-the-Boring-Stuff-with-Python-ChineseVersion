@@ -1,16 +1,16 @@
 # Functions
-## https://youtu.be/WB4hJJkfhLU相应的视频教程
-### 
+## [相关视频教程]（https://youtu.be/WB4hJJkfhLU）
+
  You’re already familiar with the print(), input(), and len() functions from the previous chapters. 
  Python provides several builtin functions like these, but you can also write your own functions. 
  A function is like a mini-program within a program.  
  在前面的章节你已经熟悉的print()，input()和len()函数。  
  Python提供了一些这样的内建函数，你也可以编写自己的函数。  
  函数就像一个程序中的一个小程序。  
-### 
+
  To better understand how functions work, let’s create one. Type this program into the file editor and save it as helloFunc.py:
  理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：  
-### 
+ 
 	def hello():  
 		print('Howdy!')  
 		print('Howdy!!!')  
@@ -18,14 +18,14 @@
 	hello()  
 	hello()  
 	hello()
-### 
+
  The first line is a def statement [1], which defines a function named hello().  
  The code in the block that follows the def statement[2]， is the body of the function.   
  This code is executed when the function is called, not when the function is first defined.  
  第一行的def我们成为函数声明语句。def为函数声明关键词。我们将这个函数名称定义为hello.  
  紧跟着函数声明语句的代码块我们成为函数体。  
  当函数被调用的时候函数的代码才会执行，而不是在首次定义函数的时候执行该代码。  
-### 
+ 
  The hello() lines after the function are function calls. In code,  a function call is  just the  function’s name 
  followed by  parentheses, possibly with some number of arguments in between the parentheses.  When the  program execution
  reaches these  calls, it  will jump  to the  top line  in the function and begin executing the code there. When it reaches the end 
@@ -53,7 +53,7 @@
 	Howdy!  
 	Howdy!!!  
 	Hello there.  
-### 
+ 
  A major purpose of functions is to group code that gets executed multiple times. Without a function defined, you would have to  copy and paste this code each time, and the program would look like this:  
 定义函数功能的主要目的把需要多次执行的代码遍成一个组。如果没有定义一个函数，你就必须复制和粘贴此代码，刚才的程序就会变成这样：  
 
@@ -218,7 +218,7 @@ You can add keyword arguments to the functions you write as well, but first you�
 
 ## Local and Global Scope  
 ## 局部和全局范围  
-## https://youtu.be/M-CoVBK_bLE对应的教学视频    
+## [相关视频教程]（https://youtu.be/M-CoVBK_bLE）    
 
 Parameters and variables that are assigned in a called function are said to exist in that function’s local scope. Variables that are assigned outside all functions are said to exist in the global scope. A variable that exists in a local scope is called a local variable, while a variable that exists in the global scope is called a global variable. A variable must be one or the other; it cannot be both local and global.  
 在函数被调用时才赋值的参数和变量其作用范围为局部范围，这样的参数和变量我们称为局部参数和局部变量。在全部函数外部被赋值的变量其作用范围为全局范围，这样的变量我们称为全局变量。一个变量的作用范围必须是全局或局部的一种，一个变量不能既是全局变量又是局部变量。  
@@ -304,6 +304,130 @@ Since there is no parameter named eggs or any code that assigns eggs a value in 
 
 ### Local and Global Variables with the Same Name
 ### 局部变量和全局变量可以具有相同的名称  
+
+To simplify your life, avoid using local variables that have the same name as a global variable or another local variable. But technically, it’s perfectly legal to do so in Python. To see what happens, type the following code into the file editor and save it as sameName.py:  
+为了让你代码可读性好，要避免使用相同的名称作为一个全局变量或其他局部变量的变量名。但在语法上讲，Python这样做这是完全合法的。想看看会发生什么，在文本编辑框输入下面的代码并保存为samName.py:  
+	
+	def spam():
+		eggs = 'spam local' #1
+		print(eggs) # prints 'spam local'
+	def bacon():
+		eggs = 'bacon local' #2
+		print(eggs) # prints 'bacon local'
+		spam()
+		print(eggs) # prints 'bacon local'
+	eggs = 'global' #3
+	bacon()
+	print(eggs) # prints 'global'
+	
+When you run this program, it outputs the following:  
+当你运行这段代码时结果如下：  
+	bacon local  
+	spam local
+	bacon local
+	global  
+
+There are actually three different variables in this program, but confusingly they are all named eggs. The variables are as follows:
+➊ A variable named eggs that exists in a local scope when spam() is called.
+➋ A variable named eggs that exists in a local scope when bacon() is called.
+➌ A variable named eggs that exists in the global scope.
+Since these three separate variables all have the same name, it can be confusing to keep track of which one is being used at any given time. This is why you should avoid using the same variable name in different scopes.   
+其实这里有三个不同的变量，他们都被命名为eggs很容易使人误解。eggs变量如下：  
+- 1、一个局部变量eggs在函数spam()中  
+- 2、一个局部变量eggs在函数bacon()中
+- 3、一个全局变量eggs
+因为这三个独立的变量都具有相同的名称，要追踪其中一个变量在何时被使用将会十分混乱。这也是为什么建议大家不要用相同的名字命名不同的变量。
+
+### The global Statement
+### 全局声明语句  
+
+If you need to modify a global variable from within a function, use the global statement. If you have a line such as global eggs at the top of a function, it tells Python, “In this function, eggs refers to the global variable, so don’t create a local variable with this name.” For example, type the following code into the file editor and save it as sameName2.py:  
+如果你需要在一个函数中修改一个全局变量，需要用到全局声明语句。
+如果你有一行代码类似于global eggs在一个函数顶部，它告诉Python，在这个函数中eggs是指全局变量，所以不要使用此名称创建一个局部变量。”例如在文本编辑框输入下面的代码并保存为samName2.py:
+
+	def spam():
+		global eggs
+		eggs = 'spam'
+	eggs = 'global'
+	spam()
+	print(eggs)
+	
+When you run this program, the final print() call will output this:  
+当运行这个函数时最终输出如下：
+spam  
+
+Because eggs is declared global at the top of spam()，when eggs is set to 'spam' ， this assignment is done to the globally scoped eggs. No local eggs variable is created.  
+There are four rules to tell whether a variable is in a local scope or global scope:
+- If a variable is being used in the global scope (that is, outside of all functions), then it is always a global variable.
+- If there is a global statement for that variable in a function, it is a global variable.
+- Otherwise, if the variable is used in an assignment statement in the function, it is a local variable.
+ -But if the variable is not used in an assignment statement, it is a global variable.
+因为eggs在spam()函数的首行被声明全局变量eggs，当eggs被赋值为'spam"时，这个操作将全局变量的eggs进行了赋值。没有本地变量eggs被创建。  
+这里有四个规则可以判断变量是全局变量还是局部变量：
+- 当一个变量被用着全局范围（也就是说，在所有函数外面）那么这个变量就是全局变量。
+- 当一个全局声明语句在函数中被使用，那么这个变量将指向全局变量。
+- 如果变量是在函数内赋值语句中使用，那么这个是局部变量。
+- 但是如果变量没有在赋值语句中使用，它是一个全局变量。  
+
+To get a better feel for these rules, here’s an example program. Type the following code into the file editor and save it as sameName3.py:  
+这里有一个例程帮你更好的理解这几个规则。键入下面的代码到文件编辑器并保存为sameName3.py：
+
+	def spam():
+		global eggs
+    		eggs = 'spam' #全局
+    	def bacon():
+    		eggs = 'bacon' #局部
+	def ham():
+		print(eggs) #全局
+	eggs = 42 #全局
+	spam()
+	print(eggs)
+	
+In the spam() function, eggs is the global eggs variable, because there’s a global statement for eggs at the beginning of the function ➊. In bacon(), eggs is a local variable, because there’s an assignment statement for it in that function ➋. In ham() ➌, eggs is the global variable, because there is no assignment statement or global statement for it in that function. 
+在函数spam()函数中eggs是全局变量。因为在函数开始的地方用全局声明语句。在bacon()中eggs是局部变量，因为有赋值语句。在ham()中eggs是全局变量，因为没有任何赋值语句或全局声明语句。
+If you run sameName3.py, the output will look like this:    
+程序运行后结果如下： 
+spam  
+
+In a function, a variable will either always be global or always be local. There’s no way that the code in a function can use a local variable named eggs and then later in that same function use the global eggs variable.  
+在函数中，变量要么始终是全局变量要么是局部变量。在同一个函数中没有办法先使用一个叫eggs的本地变量，然后在使用全局变量eggs。
+### NOTE
+If you ever want to modify the value stored in a global variable from in a function, you must use a global statement on that variable. 
+如果你想在一个函数中修改存储在一个全局变量中的值，则必须在该变量前使用全局声明。  
+
+If you try to use a local variable in a function before you assign a value to it, as in the following program, Python will give you an error. To see this, type the following into the file editor and save it as sameName4.py:  
+如果你在函数中尝试使用一个未赋值的局部变量Python会给出错误。想看到这一点，键入以下到文件编辑器并保存为sameName4.py：  
+
+	def spam():
+		print(eggs) # ERROR!
+		eggs = 'spam local'
+	eggs = 'global
+	spam()
+	
+If you run the previous program, it produces an error message.  
+当你运行代码时会出现下面的错误：
+	
+	Traceback (most recent call last):
+	File "C:/test3784.py", line 6, in <module>
+	spam()
+	File "C:/test3784.py", line 2, in spam
+	print(eggs) # ERROR!
+	UnboundLocalError: local variable 'eggs' referenced before assignment
+	
+This error happens because Python sees that there is an assignment statement for eggs in the spam() function and therefore considers eggs to be local. But because print(eggs) is executed before eggs is assigned anything, the local variable eggs doesn’t exist. Python will not fall back to using the global eggs variable   
+错误发生是因为python看到在spam()函数中有一个赋值语句给eggs，他会认为eggs为局部变量，但是执行print(eggs)语句的时候eggs没有任何定义，局部变量eggs还不存在。python不会回去查找全局变量eggs的值。  
+
+### FUNCTIONS AS “BLACK BOXES”
+Often, all you need to know about a function are its inputs (the parameters) and output value; you don’t always have to burden yourself with how the function’s code actually works. When you think about functions in this high-level way, it’s common to say that you’re treating the function as a “black box.”
+This idea is fundamental to modern programming. Later chapters in this book will show you several modules with functions that were written by other people. While you can take a peek at the source code if you’re curious, you don’t need to know how these functions work in order to use them. And because writing functions without global variables is encouraged, you usually don’t have to worry about the function’s code interacting with the rest of your program.  
+通常情况下，你需要知道的函数输入（参数）后会有怎样的输出值，但是你并不是中需要知道代码具体是怎么执行的。当你站在更高的层面来看函数时，这些函数看起来就像一个黑盒子。这个想法是现代编程的基础。在这本书后面的章节会告诉你几个其他人编写的功能模块。虽然你好奇的时候可以看看源代码，但是你不需要知道这些函数是如何工作的就可以使用他们。而且因为我们鼓励编写函数时不用全局变量，所有你通常不必担心这些函数的代码影响到你程序的其余部分。
+
+## Exception Handling
+## 异常处理
+## [相关视频教程](https://youtu.be/qS0UkqaYmfU)
+
+
+
 
 
 
