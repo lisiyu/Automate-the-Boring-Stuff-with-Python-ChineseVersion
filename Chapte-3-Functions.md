@@ -11,7 +11,7 @@
  To better understand how functions work, let’s create one. Type this program into the file editor and save it as helloFunc.py:
  理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：
 ### 
-''def hello():  
+	def hello():  
 	print('Howdy!')  
 	print('Howdy!!!')  
 	print('Hello there.')  
