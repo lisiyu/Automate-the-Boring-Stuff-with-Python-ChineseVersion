@@ -3,13 +3,13 @@
 ### 
  You’re already familiar with the print(), input(), and len() functions from the previous chapters. 
  Python provides several builtin functions like these, but you can also write your own functions. 
- A function is like a mini-program within a program.
- 在前面的章节你已经熟悉的print()，input()和len()函数。
- Python提供了一些这样的内建函数，你也可以编写自己的函数。
- 函数就像一个程序中的一个小程序。
+ A function is like a mini-program within a program.  
+ 在前面的章节你已经熟悉的print()，input()和len()函数。  
+ Python提供了一些这样的内建函数，你也可以编写自己的函数。  
+ 函数就像一个程序中的一个小程序。  
 ### 
  To better understand how functions work, let’s create one. Type this program into the file editor and save it as helloFunc.py:
- 理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：
+ 理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：  
 ### 
 	def hello():  
 		print('Howdy!')  
@@ -19,12 +19,12 @@
 	hello()  
 	hello()
 ### 
- The first line is a def statement [1], which defines a function named hello().
- The code in the block that follows the def statement[2]， is the body of the function. 
- This code is executed when the function is called, not when the function is first defined.
- 第一行的def我们成为函数声明语句。def为函数声明关键词。我们将这个函数名称定义为hello.
- 紧跟着函数声明语句的代码块我们成为函数体。
- 当函数被调用的时候函数的代码才会执行，而不是在首次定义函数的时候执行该代码。
+ The first line is a def statement [1], which defines a function named hello().  
+ The code in the block that follows the def statement[2]， is the body of the function.   
+ This code is executed when the function is called, not when the function is first defined.  
+ 第一行的def我们成为函数声明语句。def为函数声明关键词。我们将这个函数名称定义为hello.  
+ 紧跟着函数声明语句的代码块我们成为函数体。  
+ 当函数被调用的时候函数的代码才会执行，而不是在首次定义函数的时候执行该代码。  
 ### 
  The hello() lines after the function are function calls. In code,  a function call is  just the  function’s name 
  followed by  parentheses, possibly with some number of arguments in between the parentheses.  When the  program execution
