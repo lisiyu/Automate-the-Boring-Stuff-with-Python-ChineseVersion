@@ -276,9 +276,9 @@ When bacon() returns, the local scope for that call is destroyed. The program ex
 ### 全局变量可以被局部变量读取  
 
 Consider the following program:  
-思考下面的程序
+思考下面的程序:  
 def spam():  
-	print(eggs)  
+    print(eggs)  
 eggs = 42  
 spam()  
 print(eggs)  
