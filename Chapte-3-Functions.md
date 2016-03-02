@@ -207,4 +207,33 @@ You can add keyword arguments to the functions you write as well, but first you�
 
 ## Local and Global Scope  
 ## 局部和全局范围  
-## https://youtu.be/M-CoVBK_bLE对应的教学视频  
+## https://youtu.be/M-CoVBK_bLE对应的教学视频    
+
+Parameters and variables that are assigned in a called function are said to exist in that function’s local scope. Variables that are assigned outside all functions are said to exist in the global scope. A variable that exists in a local scope is called a local variable, while a variable that exists in the global scope is called a global variable. A variable must be one or the other; it cannot be both local and global.  
+在函数被调用时才赋值的参数和变量其作用范围为局部范围，这样的参数和变量我们称为局部参数和局部变量。在全部函数外部被赋值的变量其作用范围为全局范围，这样的变量我们称为全局变量。一个变量的作用范围必须是全局或局部的一种，一个变量不能既是全局变量又是局部变量。  
+  
+Think of a scope as a container for variables. When a scope is destroyed, all the values stored in the scope’s variables are forgotten. There is only one global scope, and it is created when your program begins. When your program terminates, the global scope is destroyed, and all its variables are forgotten. Otherwise, the next time you ran your program, the variables would remember their values from the last time you ran it.  
+思考一下变量的作用范围。当一个作用范围被破坏，储存在范围内的变量的所有值都清空了。Python中只有一个全局范围，在你的程序开始时生成。当你的程序终止时全局球范围被破坏，它的所有变量将清空。否则，你程序下一次运行时，变量就会调出它最后一次运行时被赋值它们的值。  
+
+A local scope is created whenever a function is called. Any variables assigned in this function exist within the local scope. When the function returns, the local scope is destroyed, and these variables are forgotten. The next time you call this function, the local variables will not remember the values stored in them from the last time the function was called.  
+每当函数被调用时都会创建局部作用范围。任何在函数内部被赋值的变量都是局部范围。当函数返回时，局部范围被破坏，这些变量就被清空。当你下次调用这个函数的时候局部变量不会记得上次函数调用时存储的值。  
+
+Scopes matter for several reasons:
+Code in the global scope cannot use any local variables.
+However, a local scope can access global variables.
+Code in a function’s local scope cannot use variables in any other local scope.
+You can use the same name for different variables if they are in different scopes. That is, there can be a local variable named spam and a global variable also named spam.  
+他们之间有以下关系：  
+全局范围内的代码不能使用任何局部变量。    
+但是，局部变量可以范围全局变量。  
+一个函数内部的代码不能使用另外的局部变量。  
+如果变量的作用范围是不一样的那么你可以使用相同的名字来命名不同的变量。也就是说允许一个局部变量命名为spam和一个全局变量也命名为spam。  
+
+The reason Python has different scopes instead of just making everything a global variable is so that when variables are modified by the code in a particular call to a function, the function interacts with the rest of the program only through its parameters and the return value. This narrows down the list code lines that may be causing a bug. If your program contained nothing but global variables and had a bug because of a variable being set to a bad value, then it would be hard to track down where this bad value was set. It could have been set from anywhere in the program—and your program could be hundreds or thousands of lines long! But if the bug is because of a local variable with a bad value, you know that only the code in that one function could have set it incorrectly.    
+python使用不同作用范围来代替把所有变量都定义成全局的原因是，当一个变量被特定的函数调用赋值后，这个函数与其他代码的交互和作用只能通过参数和其返回值进行。在python中不当的代码缩进可能造成Bug。如果你的程序中只有一个因为全局变量被错误赋值造成的Bug，那么要找出这个错误赋值出现在什么地方是很困难的。因为你的程序有成百上千行代码这个赋值可能在任何地方出现。相反地，如果是局部变量被错误赋值造成的Bug，你只需要去调用这个局部变量所在函数的地方进行修正就可以了。  
+
+While using global variables in small programs is fine, it is a bad habit to rely on global variables as your programs get larger and larger.  
+在小程序中使用全局变量是不会有什么问题的，当您的程序变得越来越长时依靠全局变量就是一个坏习惯了。  
+
+## Local Variables Cannot Be Used in the Global Scope
+## 局部变量不能用在全局范围
