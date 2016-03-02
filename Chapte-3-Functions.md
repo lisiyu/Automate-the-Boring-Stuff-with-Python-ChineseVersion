@@ -452,8 +452,9 @@ We’ve defined a function called spam, given it a parameter, and then printed t
 	ZeroDivisionError: division by zero
 	
 A ZeroDivisionError happens whenever you try to divide a number by zero. From the line number given in the error message, you know that the return statement in spam() is causin　an　error.  
-每当你尝试除以零值的时候ZeroDivisionError发生。从错误消息中给出的行号知道spam函数的return语句导致了错误.  　
-You can put the previous divide-by-zero code in a try clause and have an except clause contain code to handle what happens when this error occurs.  
+每当你尝试除以零值的时候ZeroDivisionError发生。从错误消息中给出的行号知道spam函数的return语句导致了错误. 
+
+You can put the previous divide-by-zero code in a try clause and have an except clause contain code to handle what happens when this error occurs.    
 你可以在除零语句前加上try语句，并且用有一个except语句指明可能发生的错误会是什么并指定这个错误发生时返回什么。
 	
 	def spam(divideBy):
@@ -469,11 +470,12 @@ You can put the previous divide-by-zero code in a try clause and have an except 
 		
 When code in a try clause causes an error, the program execution immediately moves to the code in the except clause. After running that code, the execution continues as normal. The output of the previous program is as follows:  
 当在try语句中发现错误，程序执行立即移动到代码中的except。运行的代码后，将继续正常执行。上面的程序的输出是如下：  
-21.0
-3.5
-Error: Invalid argument.
-None
-42.0
+	
+	21.0
+	3.5
+	Error: Invalid argument.
+	None
+	42.0
 
 Note that any errors that occur in function calls in a try block will also be caught. Consider the following program, which instead has the spam() calls in the try block:  
 需要注意的是发生在一个try块函数调用的任何错误都将被捕获。考虑下面的程序，spam()函数在try函数块中是如何调用：  
