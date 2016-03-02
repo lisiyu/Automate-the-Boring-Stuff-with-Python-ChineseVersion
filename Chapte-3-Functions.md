@@ -1,5 +1,5 @@
 # Functions
-## [相关视频教程]（https://youtu.be/WB4hJJkfhLU）
+## [相关视频教程](https://youtu.be/WB4hJJkfhLU)
 
  You’re already familiar with the print(), input(), and len() functions from the previous chapters. 
  Python provides several builtin functions like these, but you can also write your own functions. 
@@ -218,7 +218,7 @@ You can add keyword arguments to the functions you write as well, but first you�
 
 ## Local and Global Scope  
 ## 局部和全局范围  
-## [相关视频教程]（https://youtu.be/M-CoVBK_bLE）    
+## [相关视频教程](https://youtu.be/M-CoVBK_bLE)  
 
 Parameters and variables that are assigned in a called function are said to exist in that function’s local scope. Variables that are assigned outside all functions are said to exist in the global scope. A variable that exists in a local scope is called a local variable, while a variable that exists in the global scope is called a global variable. A variable must be one or the other; it cannot be both local and global.  
 在函数被调用时才赋值的参数和变量其作用范围为局部范围，这样的参数和变量我们称为局部参数和局部变量。在全部函数外部被赋值的变量其作用范围为全局范围，这样的变量我们称为全局变量。一个变量的作用范围必须是全局或局部的一种，一个变量不能既是全局变量又是局部变量。  
