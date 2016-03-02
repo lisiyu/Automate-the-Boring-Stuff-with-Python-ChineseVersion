@@ -490,7 +490,7 @@ Note that any errors that occur in function calls in a try block will also be ca
 	except ZeroDivisionError:
 		print('Error: Invalid argument.')
 		
-When this program is run, the output looks like this: 21.0 3.5 Error: Invalid argument.  
+When this program is run, the output looks like this:  
 当运行这个程序，输出如下：  
 
 	21.0 
