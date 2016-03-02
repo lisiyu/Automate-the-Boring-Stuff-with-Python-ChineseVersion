@@ -213,7 +213,7 @@ Parameters and variables that are assigned in a called function are said to exis
 在函数被调用时才赋值的参数和变量其作用范围为局部范围，这样的参数和变量我们称为局部参数和局部变量。在全部函数外部被赋值的变量其作用范围为全局范围，这样的变量我们称为全局变量。一个变量的作用范围必须是全局或局部的一种，一个变量不能既是全局变量又是局部变量。  
   
 Think of a scope as a container for variables. When a scope is destroyed, all the values stored in the scope’s variables are forgotten. There is only one global scope, and it is created when your program begins. When your program terminates, the global scope is destroyed, and all its variables are forgotten. Otherwise, the next time you ran your program, the variables would remember their values from the last time you ran it.  
-思考一下变量的作用范围。当一个作用范围被破坏，储存在范围内的变量的所有值都清空了。Python中只有一个全局范围，在你的程序开始时生成。当你的程序终止时全局球范围被破坏，它的所有变量将清空。否则，你程序下一次运行时，变量就会调出它最后一次运行时被赋值它们的值。  
+思考一下变量的作用范围。当一个作用范围被破坏，储存在范围内的变量的所有值都清空了。Python中只有一个全局范围，在你的程序开始时生成。当你的程序终止时全局范围被破坏，它的所有变量将清空。否则，你程序下一次运行时，变量就会调出它最后一次运行时被赋值它们的值。  
 
 A local scope is created whenever a function is called. Any variables assigned in this function exist within the local scope. When the function returns, the local scope is destroyed, and these variables are forgotten. The next time you call this function, the local variables will not remember the values stored in them from the last time the function was called.  
 每当函数被调用时都会创建局部作用范围。任何在函数内部被赋值的变量都是局部范围。当函数返回时，局部范围被破坏，这些变量就被清空。当你下次调用这个函数的时候局部变量不会记得上次函数调用时存储的值。  
@@ -235,5 +235,58 @@ python使用不同作用范围来代替把所有变量都定义成全局的原�
 While using global variables in small programs is fine, it is a bad habit to rely on global variables as your programs get larger and larger.  
 在小程序中使用全局变量是不会有什么问题的，当您的程序变得越来越长时依靠全局变量就是一个坏习惯了。  
 
-## Local Variables Cannot Be Used in the Global Scope
-## 局部变量不能用在全局范围
+### Local Variables Cannot Be Used in the Global Scope
+### 局部变量不能用在全局范围  
+
+Consider this program, which will cause an error when you run it:
+思考下运行下面这个程序时，将出现什么错误：
+def spam():  
+    eggs = 31337  
+spam()  
+print(eggs)   
+If you run this program, the output will look like this:  
+如果你运行这个程序会输出如下的错误提示：
+Traceback (most recent call last):  
+  File "C:/test3784.py", line 4, in <module>  
+    print(eggs)  
+NameError: name 'eggs' is not defined  
+
+The error happens because the eggs variable exists only in the local scope created when spam() is called. Once the program execution returns from spam, that local scope is destroyed, and there is no longer a variable named eggs. So when your program tries to run print(eggs), Python gives you an error saying that eggs is not defined. This makes sense if you think about it; when the program execution is in the global scope, no local scopes exist, so there can’t be any local variables. This is why only global variables can be used in the global scope.  
+因为变量eggs只能在spam()被调用时创建，他的作用范围是局部范围所以会发生错误。当程序运返回spam时，局部作用范围已经破坏。在变量eggs中不存在任何值。所以尝试用print(eggs)来打印python会报告eggs没有被定义的错误。，如果你仔细想想，这是有道理的。当程序在全局范围内运行时，无局部范围存在，所以不能有任何局部变量。这就是为什么全局变量只可以在全局范围内使用。  
+
+###　Local Scopes Cannot Use Variables in Other Local Scopes
+### 局部作用范围不能使用其他函数局部变量  
+
+A new local scope is created whenever a function is called, including when a function is called from another function. Consider this program:  
+每当函数被调是将创建一个新的局部范围建，包括一个函数从另一个函数调用时。思考下面的程序：  
+  def spam():  
+➊    eggs = 99  
+➋    bacon()  
+➌    print(eggs)  
+  def bacon():  
+      ham = 101  
+➍    eggs = 0  
+➎ spam()  W
+hen the program starts, the spam() function is called ➎, and a local scope is created. The local variable eggs ➊ is set to 99. Then the bacon() function is called ➋, and a second local scope is created. Multiple local scopes can exist at the same time. In this new local scope, the local variable ham is set to 101, and a local variable eggs—which is different from the one in spam()’s local scope—is also created ➍ and set to 0.  
+当程序运行时，函数spam()被调用，局部范围被创建。局部变量eggs被赋值99当函数bacon()b被调用是第二个局部范围被创建。两个局部范围同时存在。在新的局部范围内，局部变量ham被赋值101，第二个局部变量eggs不同于函数spam(）中的eggs并且被赋值0.  
+When bacon() returns, the local scope for that call is destroyed. The program execution continues in the spam() function to print the value of eggs ➌, and since the local scope for the call to spam() still exists here, the eggs variable is set to 99. This is what the program prints.The upshot is that local variables in one function are completely separate from the local variables in another function.  
+当bacon()函数返回时局部范围被破坏。程序继续执行spam()函数并打印eggs的值，因为最开始创建的局部范围还存在，所以eggs的被赋值99。这就是程序运行打印的结果。其结果是，在一个函数中的局部变量是和另一个函数中的局部变量完全独立。  
+
+### Global Variables Can Be Read from a Local Scope  
+### 全局变量可以被局部变量读取  
+
+Consider the following program:  
+思考下面的程序
+def spam():  
+    print(eggs)  
+eggs = 42  
+spam()  
+print(eggs)  
+Since there is no parameter named eggs or any code that assigns eggs a value in the spam() function, when eggs is used in spam(), Python considers it a reference to the global variable eggs. This is why 42 is printed when the previous program is run.  
+由于参数eggs在函数spam()中没有任何定义，当在函数spam()中用到eggs参数时，Python会认为变量eggs是一个全局变量。这就是是为什么程序运行打印出来的值是42  
+
+### Local and Global Variables with the Same Name
+### 局部变量和全局变量可以具有相同的名称  
+
+
+
