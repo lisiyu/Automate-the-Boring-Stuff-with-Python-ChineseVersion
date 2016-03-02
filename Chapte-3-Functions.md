@@ -11,13 +11,13 @@
  To better understand how functions work, let’s create one. Type this program into the file editor and save it as helloFunc.py:
  理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：
 ### 
-def hello():  
+'def hello():  
 	print('Howdy!')  
 	print('Howdy!!!')  
 	print('Hello there.')  
 hello()  
 hello()  
-hello()  
+hello()  '
 ### 
  The first line is a def statement [1], which defines a function named hello().
  The code in the block that follows the def statement[2]， is the body of the function. 
@@ -32,7 +32,7 @@ hello()
  of the function, the execution eturns to the line  that called the function  and continues moving through  the code as before. 
  Since  this program calls hello()  three times, the code  in the hello() function is executed three times. When you run this program,
  the  output looks like this:  
-Howdy!  
+'Howdy!  
 Howdy!!!  
 Hello there.  
 Howdy!  
@@ -40,7 +40,7 @@ Howdy!!!
 Hello there.  
 Howdy!  
 Howdy!!!  
-Hello there.  
+Hello there.  '
  最后三行的hello()我们称之为函数调用。函数调用仅仅需要函数名和紧跟着的括号，括号里面包含几个这个函数所定义的参数。当程序执行到
  函数调用的时候会自动跳转到这个函数声明的位置并开始执行函数代码。当函数功能的结束时，执行返回到调用函数位置，并继续执行下面的代码.
  因为这段代码调用了三次hello()函数所以hello()函数被执行了三次。当你运行这段代码时输出结果如下：  
