@@ -55,7 +55,9 @@
 	Hello there.  
 ### 
  A major purpose of functions is to group code that gets executed multiple times. Without a function defined, you would have to  copy and paste this code each time, and the program would look like this:  
-定义函数功能的主要目的把需要多次执行的代码遍成一个组。如果没有定义一个函数，你就必须复制和粘贴此代码，刚才的程序就会变成这样：  		print('Howdy!')
+定义函数功能的主要目的把需要多次执行的代码遍成一个组。如果没有定义一个函数，你就必须复制和粘贴此代码，刚才的程序就会变成这样：  
+
+	print('Howdy!')
 	print('Howdy!!!')
 	print('Hello there.')
 	print('Howdy!')
@@ -73,6 +75,7 @@ In general, you always want to avoid duplicating code, because if you ever decid
 
  When you call the print() or len() function, you pass in values, called arguments in this context, by typing them between the parentheses. You can also define your own functions that accept arguments. Type this example into the file editor and save it as helloFunc2.py:  
 当你调用print（）或LEN（）函数时在括号中输入的内容我们称为函数车参数。你也可以定义自己的函数可以接受的参数。在文件编辑器输入如下示例程序并保存为helloFunc2.py  
+	
 	def hello(name):  
 		print('Hello ' + name)  
 	hello('Alice')  
@@ -104,6 +107,7 @@ When you call the len() function and pass it an argument such as 'Hello', the fu
 
 When an expression is used with a return statement, the return value is what this expression evaluates to. For example, the following program defines a function that returns a different string depending on what number it is passed as an argument. Type this code into the file editor and save it as magic8Ball.py:  
 当用表达式来定义返回语句时，返回值就是表达式的运算结果。举例，下面程序不同的数字作为参数时将返回不同的字符串。在文件编辑器中编写下面的代码并保存为magic8Ball.py:  
+	
 	import random  
 	def getAnswer(answerNumber):  
 		if answerNumber == 1:
@@ -116,8 +120,8 @@ When an expression is used with a return statement, the return value is what thi
            		return 'Reply hazy try again'
        		elif answerNumber == 5:  
            		return 'Ask again later'  
-		 elif answerNumber == 6:  
-        		 return 'Concentrate and ask again'  
+		elif answerNumber == 6:  
+        		return 'Concentrate and ask again'  
        		elif answerNumber == 7:  
            		return 'My reply is no'  
 		elif answerNumber == 8:  
@@ -136,10 +140,13 @@ getAnswer（）函数被调用并把变量r作为参数。程序执行将跳转�
  
 Note that since you can pass return values as an argument to another function call, you could shorten these three lines:  
 需要注意的是，因为可以通过返回值作为参数传递给另一个函数调用，所以您可以把三行缩短成一行：  
+	
 	r = random.randint(1, 9)  
 	fortune = getAnswer(r)  
 	print(fortune)  
-to this single equivalent line:  
+	
+to this single equivalent line: 
+	
 	print(getAnswer(random.randint(1, 9)))  
 
 Remember, expressions are composed of values and operators. A function call can be used in an expression because it evaluates to its return value.  
@@ -153,6 +160,7 @@ In Python there is a value called None, which represents the absence of a value.
 
 This value-without-a-value can be helpful when you need to store something that won’t be confused for a real value in a variable. One place where None is used is as the return value of print(). The print() function displays text on the screen, but it doesn’t need to return anything in the same way len() or input() does. But since all function calls need to evaluate to a return value, print() returns None. To see this in action, enter the following into the interactive shell:  
 当你需要在变量中存储一个无法定义的数值时，空值就会变得非常有用。空值有一个常用的地方就是作为print()函数执行后的返回值。print()函数的功能是把字符打印到屏幕上，但是他又不能像len()或input()函数一样执行后返回一个真实存在的值。但所有函数执行完成后都需要一个返回值，print()函数返回为空值。想看到空值的作用请在交互窗口中输入如下代码：  
+	
 	spam = print('Hello!')
 	Hello!
 	None == spam
@@ -170,9 +178,11 @@ Most arguments are identified by their position in the function call. For exampl
 However, keyword arguments are identified by the keyword put before them in the function call. Keyword arguments are often used for optional parameters. For example, the print() function has the optional parameters end and sep to specify what should be printed at the end of its arguments and between its arguments (separating them), respectively.  
 If you ran the following program:  
 但是关键字参数是在他们函数调用之前通过关键字进行定义和区分的。关键字参数通常是可选参数。例如，print()函数具有可选参数end和spe两个可选参数.end这个参数可以指定在其结尾换行或继续打印。spe参数则可以在多个参数之间打印一些特殊字符如逗号等。当你运行下面的程序：  
+	
 	print('Hello')  
 	print('World')  
-	the output would look like this:  
+
+the output would look like this:  
 运行结果如下：  
 	Hello  
 	World  
@@ -180,8 +190,10 @@ If you ran the following program:
 The two strings appear on separate lines because the print() function automatically adds a newline character to the end of the string it is passed. However, you can set the end keyword argument to change this to a different string. For example, if the program were this:  
 这两个字符串出现在不同的行上，因为print（）函数会自动添加一个换行符在字符串的结尾。但是，您可以将end关键字参数更改为不同的字符串。
 例如，如果程序是这样的:  
+	
 	print('Hello', end='')    
 	print('World')    
+	
 the output would look like this:  
 程序运行结果是两个字符在同一行。  
 	HelloWorld  
@@ -191,11 +203,13 @@ The output is printed on a single line because there is no longer a new-line pri
 
 Similarly, when you pass multiple string values to print(), the function will automatically separate them with a single space. Enter the following into the interactive shell:  
 同样，当你使用print（）函数打印多个字符串值，该功能会自动将这些用一个空格分开。输入以下内容：  
+	
 	print('cats', 'dogs', 'mice')    
 	cats dogs mice  
 
 But you could replace the default separating string by passing the sep keyword argument. Enter the following into the interactive shell:  
 但是你可以通过传递sep关键字参数替换默认的分隔字符串。在交互窗体输入以下代码：  
+	
 	print('cats', 'dogs', 'mice', sep=',')    
 	cats,dogs,mice  
 
@@ -237,10 +251,12 @@ While using global variables in small programs is fine, it is a bad habit to rel
 
 Consider this program, which will cause an error when you run it:
 思考下运行下面这个程序时，将出现什么错误：
+	
 	def spam():  
 		eggs = 31337  
 		spam()  
 	print(eggs)   
+
 If you run this program, the output will look like this:  
 如果你运行这个程序会输出如下的错误提示：
 Traceback (most recent call last):  
@@ -256,6 +272,7 @@ The error happens because the eggs variable exists only in the local scope creat
 
 A new local scope is created whenever a function is called, including when a function is called from another function. Consider this program:  
 每当函数被调是将创建一个新的局部范围建，包括一个函数从另一个函数调用时。思考下面的程序：  
+	
 	def spam():  
 		eggs = 99  
 		bacon()  
@@ -264,6 +281,7 @@ A new local scope is created whenever a function is called, including when a fun
 		ham = 101  
 		eggs = 0  
 	pam()  
+
 When the program starts, the spam() function is called ➎, and a local scope is created. The local variable eggs ➊ is set to 99. Then the bacon() function is called ➋, and a second local scope is created. Multiple local scopes can exist at the same time. In this new local scope, the local variable ham is set to 101, and a local variable eggs—which is different from the one in spam()’s local scope—is also created ➍ and set to 0.  
 当程序运行时，函数spam()被调用，局部范围被创建。局部变量eggs被赋值99当函数bacon()b被调用是第二个局部范围被创建。两个局部范围同时存在。在新的局部范围内，局部变量ham被赋值101，第二个局部变量eggs不同于函数spam(）中的eggs并且被赋值0.  
 When bacon() returns, the local scope for that call is destroyed. The program execution continues in the spam() function to print the value of eggs ➌, and since the local scope for the call to spam() still exists here, the eggs variable is set to 99. This is what the program prints.The upshot is that local variables in one function are completely separate from the local variables in another function.  
@@ -274,11 +292,13 @@ When bacon() returns, the local scope for that call is destroyed. The program ex
 
 Consider the following program:  
 思考下面的程序:  
+	
 	def spam():  
 		print(eggs)  
 	eggs = 42  
 	spam()  
 	print(eggs)  
+
 Since there is no parameter named eggs or any code that assigns eggs a value in the spam() function, when eggs is used in spam(), Python considers it a reference to the global variable eggs. This is why 42 is printed when the previous program is run.  
 由于参数eggs在函数spam()中没有任何定义，当在函数spam()中用到eggs参数时，Python会认为变量eggs是一个全局变量。这就是是为什么程序运行打印出来的值是42  
 
