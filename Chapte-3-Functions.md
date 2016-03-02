@@ -451,8 +451,8 @@ We’ve defined a function called spam, given it a parameter, and then printed t
 	return 42 / divideBy
 	ZeroDivisionError: division by zero
 	
-A ZeroDivisionError happens whenever you try to divide a number by zero. From the line number given in the error message, you know that the return statement in spam() is causing an error.　　
-每当你尝试除以零值的时候ZeroDivisionError发生。从错误消息中给出的行号知道spam函数的return语句导致了错误。　　
+A ZeroDivisionError happens whenever you try to divide a number by zero. From the line number given in the error message, you know that the return statement in spam() is causin　an　error.  
+每当你尝试除以零值的时候ZeroDivisionError发生。从错误消息中给出的行号知道spam函数的return语句导致了错误.  　
 You can put the previous divide-by-zero code in a try clause and have an except clause contain code to handle what happens when this error occurs.  
 你可以在除零语句前加上try语句，并且用有一个except语句指明可能发生的错误会是什么并指定这个错误发生时返回什么。
 	
@@ -501,7 +501,7 @@ print(spam(1))永远不会执行是因为一旦执行跳转到except句中的代
 
 ##　A Short Program: Guess the Number
 ##　一个简短的程序：猜数字
-## [相关视频教程]（https://youtu.be/48WXHT0dfEY）
+## [相关视频教程](https://youtu.be/48WXHT0dfEY)
 
 
 
