@@ -12,12 +12,12 @@
  理解函数的工作原理的最好方法是我们创建一个试试。在文件编辑器里面输入这段代码到并保存为helloFunc.py：
 ### 
 	def hello():  
-	print('Howdy!')  
-	print('Howdy!!!')  
-	print('Hello there.')  
-hello()  
-hello()  
-hello()  ''
+		print('Howdy!')  
+		print('Howdy!!!')  
+		print('Hello there.')  
+	hello()  
+	hello()  
+	hello()
 ### 
  The first line is a def statement [1], which defines a function named hello().
  The code in the block that follows the def statement[2]， is the body of the function. 
