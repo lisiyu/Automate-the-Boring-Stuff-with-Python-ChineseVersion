@@ -498,7 +498,8 @@ When this program is run, the output looks like this:
 	
 
 The reason print(spam(1)) is never executed is because once the execution jumps to the code in the except clause, it does not return to the try clause. Instead, it just continues moving down as normal.  
-print(spam(1))永远不会执行是因为一旦执行跳转到except句中的代码，它不会返回到try语句。相反，它只是继续向下执行。
+print(spam(1))永远不会执行是因为一旦执行跳转到except句中的代码，它不会返回到try语句。相反，它只是继续向下执行。  
+
 ## A Short Program: Guess the Number
 ## 一个小程序：猜数字
 ## [相关视频教学](https://youtu.be/48WXHT0dfEY)
@@ -572,6 +573,7 @@ If the guess is neither higher nor lower than the secret number, then it must be
 		print('Nope. The number I was thinking of was ' + str(secretNumber))
 After the for loop, the previous if...else statement checks whether the player has correctly guessed the number and prints an appropriate message to the screen. In both cases, the program displays a variable that contains an integer value (guessesTaken and secretNumber). Since it must concatenate these integer values to strings, it passes these variables to the str() function, which returns the string value form of these integers. Now these strings can be concatenated with the + operators before finally bei...(line truncated)...
 猜测数字for循环结束后，用if～else语句检查玩家是否在循环次数中猜中数字并打印相应的提示消息到屏幕上。在这两种情况下，程序将显示包含一个整数值（guessesTaken和secretNumber）的变量。因为打印函数只能连接字符串类型的数据，所以我们需要用str()函数来把整数值类型转换成字符串类型。现在，这些字符串可以用+运算符连接起来并调用print()函数打印出来。  
+
 ## Summary
 ## 总结
 
@@ -581,6 +583,7 @@ Functions are a great tool to help you organize your code. You can think of them
 函数是一个伟大的工具来帮助你组织你的代码。你可以把它们当作黑盒子：它们以参数和输出返回值的形式存在，并且它们代码不会影响到其他函数的变量。  
 In previous chapters, a single error could cause your programs to crash. In this chapter, you learned about try and except statements, which can run code when an error has been detected. This can make your programs more resilient to common error cases.  
 在前面的章节中，单个错误可能会导致程序崩溃。在这章我们学习了try和except声明，当检测到错误时代码还能运行。  
+
 ## Practice Questions
 ## 练习题
 
@@ -626,6 +629,7 @@ In previous chapters, a single error could cause your programs to crash. In this
 	Q:
 	14. What goes in the try clause? What goes in the except clause?   
 	  try语句什么是作用？except语句是什么作用？
+	  
 ## Practice Projects
 ## 项目练习
 For practice, write programs to do the following tasks.  
@@ -652,6 +656,7 @@ The output of this program could look something like this:
 	4
 	2
 	1
+	
 ### Input Validation
 ### 输入验证
 Add try and except statements to the previous project to detect whether the user types in a noninteger string. Normally, the int() function will raise a ValueError error if it is passed a noninteger string, as in int('puppy'). In the except clause, print a message to the user saying they must enter an integer.  
