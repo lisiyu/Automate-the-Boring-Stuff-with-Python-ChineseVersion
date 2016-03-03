@@ -426,6 +426,7 @@ This idea is fundamental to modern programming. Later chapters in this book will
 ## 异常处理
 ## [相关视频教程](https://youtu.be/qS0UkqaYmfU)
 
+<<<<<<< HEAD
 The toy examples I’ve show you so far are useful for introducing basic concepts, but now let’s see how everything you’ve learned comes together in a more complete program. In this section, I’ll show you a simple “guess the number” game. When you run this program, the output will look something like this:  
 到目前为止我给你们举的玩具的例子对引入基本概念是非常有用的，但现在让我们来看看如何把你学到的一切结合在一起成为一个更完整的方案。在本节中，我会告诉你一个简单的“猜数字”游戏。当你运行这个程序，输出会是这个样子：
 	I am thinking of a number between 1 and 20.
@@ -579,3 +580,88 @@ The output of this program could look something like this:
 ### 输入验证
 Add try and except statements to the previous project to detect whether the user types in a noninteger string. Normally, the int() function will raise a ValueError error if it is passed a noninteger string, as in int('puppy'). In the except clause, print a message to the user saying they must enter an integer.  
 尝试用except语句来提前检测用户输入是否为非整形数据类型。通常情况下，如果输入是非整数字符串int()函数将引发ValueError错误，例如int('puppy').在except语句，打印一个消息告诉用户说他们必须输入一个整数。
+=======
+Right now, getting an error, or exception, in your Python program means the entire program will crash. You don’t want this to happen in real-world programs. Instead, you want the program to detect errors, handle them, and then continue to run.  
+运行你的Python程序得到一个错误，或异常，意味着整个程序会崩溃。你不希望这些错误在交付项目中发生。相反，你想要程序来检测错误，处理它们，然后继续运行。  
+For example, consider the following program, which has a “divide-by-zero” error. Open a new file editor window and enter the following code, saving it as zeroDivide.py:  
+例如，下面的程序，其中有一个“除以零”错误。打开一个新的文件编辑器窗口，然后输入以下代码，将其保存为zeroDivide.py：
+	
+	def spam(divideBy):
+		return 42 / divideBy
+
+	print(spam(2))
+	print(spam(12))
+	print(spam(0))
+	print(spam(1))
+	
+We’ve defined a function called spam, given it a parameter, and then printed the value of that function with various parameters to see what happens. This is the output you get when you run the previous code:  
+我们定义了一个名为spam的程序，给它一个参数，然后打印有不同参数的函数值，看看会发生什么。当你运行上面的代码中会输出如下内容：
+	
+	21.0
+	3.5
+	Traceback (most recent call last):
+	File "C:/zeroDivide.py", line 6, in <module>
+	print(spam(0))
+	File "C:/zeroDivide.py", line 2, in spam
+	return 42 / divideBy
+	ZeroDivisionError: division by zero
+	
+A ZeroDivisionError happens whenever you try to divide a number by zero. From the line number given in the error message, you know that the return statement in spam() is causin　an　error.  
+每当你尝试除以零值的时候ZeroDivisionError发生。从错误消息中给出的行号知道spam函数的return语句导致了错误. 
+
+You can put the previous divide-by-zero code in a try clause and have an except clause contain code to handle what happens when this error occurs.    
+你可以在除零语句前加上try语句，并且用有一个except语句指明可能发生的错误会是什么并指定这个错误发生时返回什么。
+	
+	def spam(divideBy):
+		try:
+			return 42 / divideBy
+		except ZeroDivisionError:
+        		print('Error: Invalid argument.')
+
+	print(spam(2))
+	print(spam(12))
+	print(spam(0))
+	print(spam(1))
+		
+When code in a try clause causes an error, the program execution immediately moves to the code in the except clause. After running that code, the execution continues as normal. The output of the previous program is as follows:  
+当在try语句中发现错误，程序执行立即移动到代码中的except。运行的代码后，将继续正常执行。上面的程序的输出是如下：  
+	
+	21.0
+	3.5
+	Error: Invalid argument.
+	None
+	42.0
+
+Note that any errors that occur in function calls in a try block will also be caught. Consider the following program, which instead has the spam() calls in the try block:  
+需要注意的是发生在一个try块函数调用的任何错误都将被捕获。考虑下面的程序，spam()函数在try函数块中是如何调用：  
+	
+	def spam(divideBy):
+		return 42 / divideBy
+	try:
+		print(spam(2))
+		print(spam(12))
+		print(spam(0))
+		print(spam(1))
+	except ZeroDivisionError:
+		print('Error: Invalid argument.')
+		
+When this program is run, the output looks like this:  
+当运行这个程序，输出如下：  
+
+	21.0 
+	3.5 
+	Error: Invalid argument.      #错误：无效的参数。
+	
+
+The reason print(spam(1)) is never executed is because once the execution jumps to the code in the except clause, it does not return to the try clause. Instead, it just continues moving down as normal.  
+print(spam(1))永远不会执行是因为一旦执行跳转到except句中的代码，它不会返回到try语句。相反，它只是继续向下执行。  
+
+##　A Short Program: Guess the Number
+##　一个简短的程序：猜数字
+## [相关视频教程](https://youtu.be/48WXHT0dfEY)
+
+
+
+
+
+>>>>>>> origin/lisiyu
