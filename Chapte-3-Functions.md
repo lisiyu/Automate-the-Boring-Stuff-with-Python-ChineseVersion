@@ -571,7 +571,7 @@ If the guess is neither higher nor lower than the secret number, then it must be
 		print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
 	else:
 		print('Nope. The number I was thinking of was ' + str(secretNumber))
-After the for loop, the previous if...else statement checks whether the player has correctly guessed the number and prints an appropriate message to the screen. In both cases, the program displays a variable that contains an integer value (guessesTaken and secretNumber). Since it must concatenate these integer values to strings, it passes these variables to the str() function, which returns the string value form of these integers. Now these strings can be concatenated with the + operators before finally bei...(line truncated)...
+After the for loop, the previous if...else statement checks whether the player has correctly guessed the number and prints an appropriate message to the screen. In both cases, the program displays a variable that contains an integer value (guessesTaken and secretNumber). Since it must concatenate these integer values to strings, it passes these variables to the str() function, which returns the string value form of these integers. Now these strings can be concatenated with the + operators before finally bei...(line truncated)...  
 猜测数字for循环结束后，用if～else语句检查玩家是否在循环次数中猜中数字并打印相应的提示消息到屏幕上。在这两种情况下，程序将显示包含一个整数值（guessesTaken和secretNumber）的变量。因为打印函数只能连接字符串类型的数据，所以我们需要用str()函数来把整数值类型转换成字符串类型。现在，这些字符串可以用+运算符连接起来并调用print()函数打印出来。  
 
 ## Summary
