@@ -427,6 +427,7 @@ This idea is fundamental to modern programming. Later chapters in this book will
 ## [相关视频教程](https://youtu.be/qS0UkqaYmfU)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The toy examples I’ve show you so far are useful for introducing basic concepts, but now let’s see how everything you’ve learned comes together in a more complete program. In this section, I’ll show you a simple “guess the number” game. When you run this program, the output will look something like this:  
 到目前为止我给你们举的玩具的例子对引入基本概念是非常有用的，但现在让我们来看看如何把你学到的一切结合在一起成为一个更完整的方案。在本节中，我会告诉你一个简单的“猜数字”游戏。当你运行这个程序，输出会是这个样子：
 	I am thinking of a number between 1 and 20.
@@ -660,8 +661,170 @@ print(spam(1))永远不会执行是因为一旦执行跳转到except句中的代
 ##　一个简短的程序：猜数字
 ## [相关视频教程](https://youtu.be/48WXHT0dfEY)
 
+The toy examples I’ve show you so far are useful for introducing basic concepts, but now let’s see how everything you’ve learned comes together in a more complete program. In this section, I’ll show you a simple “guess the number” game. When you run this program, the output will look something like this:  
+到目前为止我给你们举的玩具的例子对引入基本概念是非常有用的，但现在让我们来看看如何把你学到的一切结合在一起成为一个更完整的方案。在本节中，我会告诉你一个简单的“猜数字”游戏。当你运行这个程序，输出会是这个样子：
+	I am thinking of a number between 1 and 20.
+	Take a guess.
+	10
+	Your guess is too low.
+	Take a guess.
+	15
+	Your guess is too low.
+	Take a guess.
+	17
+	Your guess is too high.
+	Take a guess.
+	16
+	Good job! You guessed my number in 4 guesses!
+
+Type the following source code into the file editor, and save the file as guessTheNumber.py:  
+键入下面的源代码到文件编辑器，并将该文件保存为guessTheNumber.py：
+    
+        #This is a guess the number game
+        import random
+        secretNumber = random.randint (1,20)
+        print('I am thinking of a number betwen 1 and 20.')
+
+        # Ask the player to guess 6 times
+        for guessesTaken in range(1,7):
+                print('Take a guess.')
+                guess = int(input())
+                if guess < secretNumber:
+                        print('Your guess is too low.')
+                elif guess > secretNumber:
+                        print('Your guess is too high.')
+                else:
+                        break
+        if guess == secretNumber:
+                print('Good job!Yuou guessed my number in ' + str(guessesTaken) + ' guesses! ')
+        else:
+                print('Nope.The number I was thinking of was' + str(secertNumber))
+
+First, a comment at the top of the code explains what the program does. Then, the program imports the random module so that it can use the random.randint() function to generate a number for the user to guess. The return value, a random integer between 1 and 20, is stored in the variable secretNumber.  
+首先，在代码顶部的注释说明该程序的功能。然后，程序导入随机模块，以便它可以使用random.randint()函数来生成一个随机数，给用户猜测。随机函数返回1和20之间的随机整数，被存储在变量secretNumber中。  
+	print('I am thinking of a number between 1 and 20.')
+
+	# Ask the player to guess 6 times.
+	for guessesTaken in range(1, 7):
+		print('Take a guess.')
+		guess = int(input())
+The program tells the player that it has come up with a secret number and will give the player six chances to guess it. The code that lets the player enter a guess and checks that guess is in a for loop that will loop at most six times. The first thing that happens in the loop is that the player types in a guess. Since input() returns a string, its return value is passed straight into int(), which translates the string into an integer value. This gets stored in a variable named guess.  
+该程序会告诉玩家，它想出了一个秘密号码，并给玩家6次机会来猜它。程序让玩家猜测一个数，并检查猜测的数字是否正确。这个猜测过程最多循环六次。这个循环中第一件发生的事情是玩家猜测输入的数据类型。因为input()函数返回为字符串，所以我们把值传递给用int()函数，并把字符串转换成数字。这个猜测的数据被存储在变量guess中。  
+
+	if guess < secretNumber:
+		print('Your guess is too low.')
+	elif guess > secretNumber:
+		print('Your guess is too high.')
+		
+These few lines of code check to see whether the guess is less than or greater than the secret number. In either case, a hint is printed to the screen.  
+这几行代码用来检测玩家猜测的数字是大于还是小于程序随机产生的秘密数字。并将这两种情况下的提示打印到屏幕上。
+
+	else:
+		break    # This condition is the correct guess!
+
+If the guess is neither higher nor lower than the secret number, then it must be equal to the secret number, in which case you want the program execution to break out of the for loop.  
+如果猜测数字刚好等于秘密数字跳出猜测数字的for循环。  
+	f guess == secretNumber:
+		print('Good job! You guessed my number in ' + str(guessesTaken) + ' guesses!')
+	else:
+		print('Nope. The number I was thinking of was ' + str(secretNumber))
+After the for loop, the previous if...else statement checks whether the player has correctly guessed the number and prints an appropriate message to the screen. In both cases, the program displays a variable that contains an integer value (guessesTaken and secretNumber). Since it must concatenate these integer values to strings, it passes these variables to the str() function, which returns the string value form of these integers. Now these strings can be concatenated with the + operators before finally bei...(line truncated)...
+猜测数字for循环结束后，用if～else语句检查玩家是否在循环次数中猜中数字并打印相应的提示消息到屏幕上。在这两种情况下，程序将显示包含一个整数值（guessesTaken和secretNumber）的变量。因为打印函数只能连接字符串类型的数据，所以我们需要用str()函数来把整数值类型转换成字符串类型。现在，这些字符串可以用+运算符连接起来并调用print()函数打印出来。  
+## Summary
+## 总结
+
+Functions are the primary way to compartmentalize your code into logical groups. Since the variables in functions exist in their own local scopes, the code in one function cannot directly affect the values of variables in other functions. This limits what code could be changing the values of your variables, which can be helpful when it comes to debugging your code.  
+函数是划分你的代码到逻辑组的主要方式。因为在函数中的变量有自己的作用域存在，在一个函数的代码不能直接影响的其他函数的变量的值。由于改变你变量值的代码有范围限制，所以在调试代码时非常有用。  
+Functions are a great tool to help you organize your code. You can think of them as black boxes: They have inputs in the form of parameters and outputs in the form of return values, and the code in them doesn’t affect variables in other functions.  
+函数是一个伟大的工具来帮助你组织你的代码。你可以把它们当作黑盒子：它们以参数和输出返回值的形式存在，并且它们代码不会影响到其他函数的变量。  
+In previous chapters, a single error could cause your programs to crash. In this chapter, you learned about try and except statements, which can run code when an error has been detected. This can make your programs more resilient to common error cases.  
+在前面的章节中，单个错误可能会导致程序崩溃。在这章我们学习了try和except声明，当检测到错误时代码还能运行。  
+## Practice Questions
+## 练习题
+
+	Q:
+	1. Why are functions advantageous to have in your programs?  
+	   为什么函数对你的代码有用？
+	Q:
+	2. When does the code in a function execute: when the function is defined or when the function is called?  
+	   函数中的代码什么时候执行：是函数被定义的时候还是函数被调用的时候？
+	Q:
+	3. What statement creates a function?  
+	  什么语句可以创建一个函数？
+	Q:
+	4. What is the difference between a function and a function call?  
+	  函数和函数调用之间有什么不同？
+	Q:
+	5. How many global scopes are there in a Python program? How many local scopes?  
+	  在python中有几个全局作用范围？几个局部作用范围？
+	Q:
+	6. What happens to variables in a local scope when the function call returns?  
+	  函数调用返回时在局部范围内的变量会发生什么？
+	Q:
+	7. What is a return value? Can a return value be part of an expression?  
+	  什么是一个返回值？返回值可以是一个表达式的一部分吗？
+	Q:
+	8. If a function does not have a return statement, what is the return value of a call to that function?  
+	  如果一个函数没有返回值，这个函数被调用的时候会返回什么？
+	Q:
+	9. How can you force a variable in a function to refer to the global variable?  
+	  怎么将一个函数中的变量强制指向全局变量。
+	Q:
+	10. What is the data type of None?  
+	  None是什么类型的数据。
+	Q:
+	11. What does the import areallyourpetsnamederic statement do?  
+	  import areallyourpetsnamederic语句有什么作用？
+	Q:
+	12. If you had a function named bacon() in a module named spam, how would you call it after importing spam?  
+	  如果有一个函数bacon()在一个叫spam的模块中，在导入模块spam之后如何调用。
+	Q:
+	13. How can you prevent a program from crashing when it gets an error?  
+	  怎么防止程序在遇到错误时崩溃。
+	Q:
+	14. What goes in the try clause? What goes in the except clause?   
+	  try语句什么是作用？except语句是什么作用？
+## Practice Projects
+## 项目练习
+For practice, write programs to do the following tasks.  
+编写程序来执行以下任务作为练习  
+### The Collatz Sequence
+### 考拉兹猜想
+> 又称为奇偶归一猜想、3n＋1猜想、冰雹猜想、角谷猜想、哈塞猜想、乌拉姆猜想或叙拉古猜想，是指对于每一个正整数，如果它是奇数，则对它乘3再加1，如果它是偶数，则对它除以2，如此循环，最终都能够得到1。
+
+Write a function named collatz() that has one parameter named number. If number is even, then collatz() should print number // 2 and return this value. If number is odd, then collatz() should print and return 3 * number + 1.  
+编写一个名为在Collat​​z()的函数他有一个参数叫number。如果number是偶数，那么Collat​​z()打印number//2并返回这个值。如果number为奇数，Collat​​z()打印并返回3 *number+ 1的值。  
+Then write a program that lets the user type in an integer and that keeps calling collatz() on that number until the function returns the value 1. (Amazingly enough, this sequence actually works for any integer—sooner or later, using this sequence, you’ll arrive at 1! Even mathematicians aren’t sure why. Your program is exploring what’s called the Collatz sequence, sometimes called “the simplest impossible math problem.”)   
+然后再写一个程序，让用户键入一个整数，并且不断调用Collat​​z（）直到函数返回值1。（令人吃惊的是无论输入什么样的整数在运行足够次数后最终都会得到1！甚至连数学家都不知道为什么。你的程序解决的问题叫着考拉赫兹猜想。有时也被称为“最简单的无解数学问题。”  
+Remember to convert the return value from input() to an integer with the int() function; otherwise, it will be a string value.
+Hint: An integer number is even if number % 2 == 0, and it’s odd if number % 2 == 1.  
+记住用int()将input()值转换成整数。小提示：An integer number is even if number % 2 == 0, and it’s odd if number % 2 == 1.   
+The output of this program could look something like this:  
+程序运行后会像这样：
+	Enter number:
+	3
+	10
+	5
+	16
+	8
+	4
+	2
+	1
+### Input Validation
+### 输入验证
+Add try and except statements to the previous project to detect whether the user types in a noninteger string. Normally, the int() function will raise a ValueError error if it is passed a noninteger string, as in int('puppy'). In the except clause, print a message to the user saying they must enter an integer.  
+尝试用except语句来提前检测用户输入是否为非整形数据类型。通常情况下，如果输入是非整数字符串int()函数将引发ValueError错误，例如int('puppy').在except语句，打印一个消息告诉用户说他们必须输入一个整数。
+
+
 
 
 
 
 >>>>>>> origin/lisiyu
+=======
+
+
+
+
+
+>>>>>>> parent of 8706af1... 第三章翻译完毕
