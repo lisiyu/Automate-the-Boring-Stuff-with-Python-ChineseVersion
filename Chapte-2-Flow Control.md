@@ -8,3 +8,12 @@ These flow control statements directly correspond to the symbols in a flowchart,
 这些流程控制语句直接对应流程图中的符号，我们将在本章讨论不同的代码流程图。
 下图显示了如果下雨怎么办的流程图。按照从开始到结束的路径。  
 ![Figure](https://automatetheboringstuff.com/images/000105.jpg)  
+
+In a flowchart, there is usually more than one way to go from the start to the end. The same is true for lines of code in a computer program. Flowcharts represent these branching points with diamonds, while the other steps are represented with rectangles. The starting and ending steps are represented with rounded rectangles.  
+在一个流程中，通常从开始到结果有不止一种到达方式。在程序代码中也是这样。流程图中用菱形表示分支节点，而其他步骤用矩形表示。开始和结束的步骤被表示成具有圆角的矩形。  
+
+But before you learn about flow control statements, you first need to learn how to represent those yes and no options, and you need to understand how to write those branching points as Python code. To that end, let’s explore Boolean values, comparison operators, and Boolean operators.  
+但是在你学习流程控制语句之前，你首先需要学习如何表达yes和no选项，并且你需要了解在python代码中如何写那些分支点。为此，让我们来看看布尔值，比较运算符和布尔运算。  
+
+## Boolean Values
+## 布尔值
