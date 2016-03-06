@@ -43,12 +43,12 @@ Like any other value, Boolean values are used in expressions and can be stored i
 
 Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    Table 2-1. Comparison Operators
 |Operator |Meaning
-|== |Equal to
-|!= |Not equal to
-|< |Less than
-|> |Greater than
-|<= |Less than or equal to
-|>= |Greater than or equal to  
+|== |Equal to|
+|!= |Not equal to|
+|< |Less than|
+|> |Greater than|
+|<= |Less than or equal to|
+|>= |Greater than or equal to|
 
 These operators evaluate to True or False depending on the values you give them. Let’s try some operators now, starting with == and !=.  
 这些表达式的结果为真或假取决于你给他们的值。让我们从==和!=开始尝试一些运算表达式。  
