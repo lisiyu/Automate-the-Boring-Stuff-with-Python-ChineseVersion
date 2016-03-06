@@ -87,6 +87,7 @@ As you might expect, == (equal to) evaluates to True when the values on both sid
 Note that an integer or floating-point value will always be unequal to a string value. The expression 42 == '42' ➊ evaluates to False because Python considers the integer 42 to be different from the string '42'.  
 注意，整数或浮点值将始终不等于一个字符串值。表达式42=='42'➊计算为假，因为Python认为整数42和字符串'42'不同。 The <, >, <=, and >= operators, on the other hand, work properly only with integer and floating-point values.  
 在另一方面<，>，<=，和> =运算符仅适用于整数和浮点值运算。  
+	
 	>>> 42 < 100
 	True
 	>>> 42 > 100
@@ -100,6 +101,7 @@ Note that an integer or floating-point value will always be unequal to a string 
 	>>> myAge >= 10
 	True
 	>>>    
+		
 ### THE DIFFERENCE BETWEEN THE == AND = OPERATORS
 You might have noticed that the == operator (equal to) has two equal signs, while the = operator (assignment) has just one equal sign. It’s easy to confuse these two operators with each other. Just remember these points:  
 The == operator (equal to) asks whether two values are the same as each other.
