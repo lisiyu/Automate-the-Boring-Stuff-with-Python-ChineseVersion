@@ -41,8 +41,9 @@ Like any other value, Boolean values are used in expressions and can be stored i
 ## Comparison Operators
 ## 比较运算符
 
-Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    Table 2-1. Comparison Operators
-|Operator |Meaning
+Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    Table 2-1. Comparison Operators  
+
+|Operator |Meaning|
 |== |Equal to|
 |!= |Not equal to|
 |< |Less than|
