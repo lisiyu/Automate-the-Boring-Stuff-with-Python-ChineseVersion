@@ -54,3 +54,35 @@ Comparison operators compare two values and evaluate down to a single Boolean va
 
 These operators evaluate to True or False depending on the values you give them. Let’s try some operators now, starting with == and !=.  
 这些表达式的结果为真或假取决于你给他们的值。让我们从==和!=开始尝试一些运算表达式。  
+
+	>>> 42 == 42
+	True
+	>>> 42 == 99
+	False
+	>>> 2 != 3
+	True
+	>>> 2 != 2
+	False
+	>>> 
+
+As you might expect, == (equal to) evaluates to True when the values on both sides are the same, and != (not equal to) evaluates to True when the two values are different. The == and != operators can actually work with values of any data type.  
+正如你所预料的，==（等于）计算结果为真时，两边的值是相同的，！=（不等于）时，这两个值是不同的。==和！=操作实际上可以在任何数据类型之间。  
+
+	>>> 'hello' == 'hello'
+	True
+	>>> 'hello' == 'Hello'
+	False
+	>>> 'dog' != 'cat'
+	True
+	>>> True == True
+	True
+	>>> True != False
+	True
+	>>> 42 == 42.0
+	True
+	>>> 42 == '42'
+	False
+	>>> 
+	
+Note that an integer or floating-point value will always be unequal to a string value. The expression 42 == '42' ➊ evaluates to False because Python considers the integer 42 to be different from the string '42'.  
+注意，整数或浮点值将始终不等于一个字符串值。表达式42=='42'➊计算为假，因为Python认定整数42和字符串'42'不同。  
