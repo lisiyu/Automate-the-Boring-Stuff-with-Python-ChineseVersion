@@ -85,4 +85,36 @@ As you might expect, == (equal to) evaluates to True when the values on both sid
 	>>> 
 	
 Note that an integer or floating-point value will always be unequal to a string value. The expression 42 == '42' ➊ evaluates to False because Python considers the integer 42 to be different from the string '42'.  
-注意，整数或浮点值将始终不等于一个字符串值。表达式42=='42'➊计算为假，因为Python认定整数42和字符串'42'不同。  
+注意，整数或浮点值将始终不等于一个字符串值。表达式42=='42'➊计算为假，因为Python认为整数42和字符串'42'不同。 The <, >, <=, and >= operators, on the other hand, work properly only with integer and floating-point values.  
+在另一方面<，>，<=，和> =运算符仅适用于整数和浮点值运算。  
+	>>> 42 < 100
+	True
+	>>> 42 > 100
+	False
+	>>> 42 < 42
+	False
+	>>> eggCount = 42
+	>>> eggCount <= 42
+	True
+	>>> myAge = 29
+	>>> myAge >= 10
+	True
+	>>>    
+### THE DIFFERENCE BETWEEN THE == AND = OPERATORS
+You might have noticed that the == operator (equal to) has two equal signs, while the = operator (assignment) has just one equal sign. It’s easy to confuse these two operators with each other. Just remember these points:  
+The == operator (equal to) asks whether two values are the same as each other.
+The = operator (assignment) puts the value on the right into the variable on the left.
+To help remember which is which, notice that the == operator (equal to) consists of two characters, just like the != operator (not equal to) consists of two characters.  
+### ==和=运算符的区别  
+你可能已经注意到了==运算符（等于）有两个等号，而=运算符（赋值）只有一个等号。这是很容易相互混淆的两个运算符。请记住以下几点：  
+- ==运算符（等于）是询问两个值彼此是否相同。 
+- =运算符（赋值）把右侧的值传递到左侧的变量。 
+为了帮助记忆哪个是哪个，请注意==操作符（等于）由两个字符组成，就像！=运算符（不等于）一样也是两个字符。  
+
+You’ll often use comparison operators to compare a variable’s value to some other value, like in the eggCount <= 42 ➊ and myAge >= 10 ➋ examples. (After all, instead of typing 'dog' != 'cat' in your code, you could have just typed True.) You’ll see more examples of this later when you learn about flow control statements.  
+你会经常使用比较运算符比较两个变量的值，像eggCount <= 42和myAge> = 10的例子。 
+（毕竟你在代码中只输入True，而比键入'狗'！='猫'方便多了。）当您了解流程控制语句后会看到更多的例子。  
+
+## Boolean Operators
+## 布尔运算符
+
