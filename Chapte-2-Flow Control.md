@@ -17,3 +17,38 @@ But before you learn about flow control statements, you first need to learn how 
 
 ## Boolean Values
 ## 布尔值
+
+While the integer, floating-point, and string data types have an unlimited number of possible values, the Boolean data type has only two values: True and False. (Boolean is capitalized because the data type is named after mathematician George Boole.) When typed as Python code, the Boolean values True and False lack the quotes you place around strings, and they always start with a capital T or F, with the rest of the word in lowercase. Enter the following into the interactive shell. (Some of these instructions are intentionally incorrect, and they’ll cause error messages to appear.)  
+整数，浮点和字符串数据类型具有数量不限的可能值,但是布尔类型的数据只有真和假两种值。(布尔是大写的，因为布尔数据类型是根据数学家乔治·布尔名字命名的。）在python代码中布尔变量的值都是以大写字母的T和F开头后面字母小写的Ture和
+False来代表布尔值的真和假。在python交互窗体输入以下内容（其中的一些指令是故意写错的，他们会导致出现错误消息。）  
+
+	>>> spam = True     # (1)
+	>>> spam
+	True
+	>>> true            # (2)
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	NameError: name 'true' is not defined
+	>>> True = 2 + 2    # (3)
+	  File "<stdin>", line 1
+	SyntaxError: can't assign to keyword
+	>>> 
+	Connection to server timed out. Click run to reconne  
+
+Like any other value, Boolean values are used in expressions and can be stored in variables ➊. If you don’t use the proper case ➋ or you try to use True and False for variable names ➌, Python will give you an error message.  
+像任何其他值一样，布尔值可以在表达式中使用，并且可以存储在变量中（1）。如果你使用不正确（2）或试图使用True和False变量名（3），Python将会给你一个错误信息。  
+
+## Comparison Operators
+## 比较运算符
+
+Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    Table 2-1. Comparison Operators
+|Operator |Meaning
+|== |Equal to
+|!= |Not equal to
+|< |Less than
+|> |Greater than
+|<= |Less than or equal to
+|>= |Greater than or equal to  
+
+These operators evaluate to True or False depending on the values you give them. Let’s try some operators now, starting with == and !=.  
+这些表达式的结果为真或假取决于你给他们的值。让我们从==和!=开始尝试一些运算表达式。  
