@@ -120,3 +120,86 @@ You’ll often use comparison operators to compare a variable’s value to some 
 ## Boolean Operators
 ## 布尔运算符
 
+The three Boolean operators (and, or, and not) are used to compare Boolean values. Like comparison operators, they evaluate these expressions down to a Boolean value. Let’s explore these operators in detail, starting with the and operator.  
+三个布尔运算符（与，或，非）用于比较的布尔值。像比较运算符一样，他们计算表达式的值直到得到一个布尔值。让我们首先从与运算符开始来探究这些运算符。  
+
+## Binary Boolean Operators
+## 二元布尔运算符
+
+The and and or operators always take two Boolean values (or expressions), so they’re considered binary operators. The and operator evaluates an expression to True if both Boolean values are True; otherwise, it evaluates to False. Enter some expressions using and into the interactive shell to see it in action.  
+与和或运算符通常有两个布尔值或表达式，因此我们把它们成为二元运算符。如果两个布尔值是True的值进行和运算后结果为True，反之为False.在交互式窗口输入以下的表达式看看他们的运算结果。  
+
+	>>> True and True
+	True
+	>>> True and False
+	False
+
+A truth table shows every possible result of a Boolean operator. Table 2-2 is the truth table for the and operator.
+与运算符的真值表显示了布尔逻辑运算符的每一个可能的结果。表2-2是与运算符的真值表。  
+Table 2-2. The and Operator’s Truth Table
+|Expression|Evaluates to|
+|----------|------------|
+|True and True|True|
+|True and False|False|
+|False and True|False|
+|False and False|False|
+
+On the other hand, the or operator evaluates an expression to True if either of the two Boolean values is True. If both are False, it evaluates to False
+另一方面，如果两个布尔值其中一个为True则或运算符计算表达式值为True。如果两个都是假的，它的计算结果为False。 
+
+You can see every possible outcome of the or operator in its truth table, shown in Table 2-3.   
+如表2-3所示你可以看到在或运算符的每一个可能的结果。  
+Table 2-3. The or Operator’s Truth Table
+|Expression|Evaluates to|
+|----------|------------|
+|True and True|True|
+|True and False|True|
+|False and True|True|
+|False and False|False|
+
+## The not Operator
+## NOT运算符
+Unlike and and or, the not operator operates on only one Boolean value (or expression). The not operator simply evaluates to the opposite Boolean value.  
+和与和或表达式不同，非运算符运行在只有一个布尔值（或表达式）。非运算符计算结果为相反的布尔值。  
+
+	>>> not True
+	False
+	>>> not not not not True    # (1)
+	True
+	
+Much like using double negatives in speech and writing, you can nest not operators ➊, though there’s never not no reason to do this in real programs. Table 2-4 shows the truth table for not.  
+（1）就像在语言和写作中使用双重否定，可以多次使用非表达式，虽然实际程序很少这样实现。表2-4显示了非运算符的真值表。  
+Table 2-4. The not Operator’s Truth Table  
+|Expression|Evaluates to|
+|----------|------------|
+|not True|False|
+|not False|True|
+
+## Mixing Boolean and Comparison Operators
+##　混合布尔和比较运算符
+
+Since the comparison operators evaluate to Boolean values, you can use them in expressions with the Boolean operators.Recall that the and, or, and not operators are called Boolean operators because they always operate on the Boolean values True and False. While expressions like 4 < 5 aren’t Boolean values, they are expressions that evaluate down to Boolean values. Try entering some Boolean expressions that use comparison operators into the interactive shell.　　　　
+由于比较运算符计算结果为布尔值，你可以在表达式中使用布尔运算符。因为与，或，非的值总是布尔值的True和false，所以我们们把他们成为布尔运算符。就像表达式4<5，虽然不是布尔值，但是表达式的运算结果会获得一个布尔值。在交互窗口输入以下使用比较操作符的布尔运算式。
+
+	>>> (4 < 5) and (5 < 6)
+	True
+	>>> (4 < 5) and (9 < 6)
+	False
+	>>> (1 == 2) or (2 == 2)
+	True
+	>>> 
+	
+The computer will evaluate the left expression first, and then it will evaluate the right expression. When it knows the Boolean value for each, it will then evaluate the whole expression down to one Boolean value. You can think of the computer’s evaluation process for (4 < 5) and (5 < 6) as shown in Figure 2-2.  
+You can also use multiple Boolean operators in an expression, along with the comparison operators.  
+计算机将会从左到右依次计算表达式的值。当得到每一个表达式的布尔值后，它计算评估整个表达式直到获得一个布尔值。你可以思考下计算机计算(4 < 5) and (5 < 6)的过程，如图 Figure2-2.您也可以在表达式中使用多个布尔运算符和比较运算符.
+
+	>>> 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
+	True
+	
+The Boolean operators have an order of operations just like the math operators do. After any math and comparison operators evaluate, Python evaluates the not operators first, then the and operators, and then the or operators.  
+布尔运算符的操作顺序就像数学运算。先经进行各种数学运算和比较运算，Python的计算结果首先是非运算符，然后是和运算符，最后是或运算符。  
+![Figure 2-2](https://automatetheboringstuff.com/images/000023.jpg)
+
+##Elements of Flow Control
+## 流程控制的元素
+
