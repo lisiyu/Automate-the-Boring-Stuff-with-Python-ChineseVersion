@@ -201,8 +201,9 @@ You can also use multiple Boolean operators in an expression, along with the com
 	True
 	
 The Boolean operators have an order of operations just like the math operators do. After any math and comparison operators evaluate, Python evaluates the not operators first, then the and operators, and then the or operators.  
-布尔运算符的操作顺序就像数学运算。先经进行各种数学运算和比较运算，Python的计算结果首先是非运算符，然后是和运算符，最后是或运算符。 
-Figure2-2  
+布尔运算符的操作顺序就像数学运算。先经进行各种数学运算和比较运算，Python的计算结果首先是非运算符，然后是和运算符，最后是或运算符。  
+
+####   Figure2-2  
 ![Figure 2-2](https://automatetheboringstuff.com/images/000023.jpg)
 
 ##Elements of Flow Control
