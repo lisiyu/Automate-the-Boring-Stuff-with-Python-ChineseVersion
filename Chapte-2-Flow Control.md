@@ -41,7 +41,8 @@ Like any other value, Boolean values are used in expressions and can be stored i
 ## Comparison Operators
 ## 比较运算符
 
-Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    Table 2-1. Comparison Operators  
+Comparison operators compare two values and evaluate down to a single Boolean value. Table 2-1 lists the comparison operators.    比较运算符比较两个值并最终获得一个单一的布尔值。下表2-1列出了比较操作符。    
+Table 2-1. Comparison Operators  
 
 |Operator |Meaning|
 |---------|-------|
@@ -136,7 +137,8 @@ The and and or operators always take two Boolean values (or expressions), so the
 
 A truth table shows every possible result of a Boolean operator. Table 2-2 is the truth table for the and operator.
 与运算符的真值表显示了布尔逻辑运算符的每一个可能的结果。表2-2是与运算符的真值表。  
-Table 2-2. The and Operator’s Truth Table
+Table 2-2. The and Operator’s Truth Table  
+
 |Expression|Evaluates to|
 |----------|------------|
 |True and True|True|
@@ -149,7 +151,8 @@ On the other hand, the or operator evaluates an expression to True if either of 
 
 You can see every possible outcome of the or operator in its truth table, shown in Table 2-3.   
 如表2-3所示你可以看到在或运算符的每一个可能的结果。  
-Table 2-3. The or Operator’s Truth Table
+Table 2-3. The or Operator’s Truth Table  
+
 |Expression|Evaluates to|
 |----------|------------|
 |True and True|True|
@@ -169,7 +172,8 @@ Unlike and and or, the not operator operates on only one Boolean value (or expre
 	
 Much like using double negatives in speech and writing, you can nest not operators ➊, though there’s never not no reason to do this in real programs. Table 2-4 shows the truth table for not.  
 （1）就像在语言和写作中使用双重否定，可以多次使用非表达式，虽然实际程序很少这样实现。表2-4显示了非运算符的真值表。  
-Table 2-4. The not Operator’s Truth Table  
+Table 2-4. The not Operator’s Truth Table   
+
 |Expression|Evaluates to|
 |----------|------------|
 |not True|False|
