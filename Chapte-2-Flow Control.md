@@ -207,5 +207,86 @@ The Boolean operators have an order of operations just like the math operators d
 ![Figure 2-2](https://automatetheboringstuff.com/images/000023.jpg)
 
 ##Elements of Flow Control
-## 流程控制的元素
+## 流程控制的原理
 
+Flow control statements often start with a part called the condition, and all are followed by a block of code called the clause. Before you learn about Python’s specific flow control statements, I’ll cover what a condition and a block are.  
+流程控制语句开始部分我们称为条件，后面跟着一个代码块叫做子句。在你学习Python的具体流程控制语句前，我将介绍什么是条件和什么是代码块。  
+
+### Conditions
+### 条件
+
+The Boolean expressions you’ve seen so far could all be considered conditions, which are the same thing as expressions; condition is just a more specific name in the context of flow control statements. Conditions always evaluate down to a Boolean value, True or False. A flow control statement decides what to do based on whether its condition is True or False, and almost every flow control statement uses a condition.  
+到目前为止我们在布尔表达式中考虑到的各种情况都是相同的表达式。条件只是在流程控制语句中更具体的名称而已。条件运算的结果最终为一个布尔值，真或假。而这几乎是每一个流量控制语句使用的条件。  
+
+### Blocks of Code
+### 代码块
+
+Lines of Python code can be grouped together in blocks. You can tell when a block begins and ends from the indentation of the lines of code. There are three rules for blocks.  
+-Blocks begin when the indentation increases.  
+-Blocks can contain other blocks.  
+-Blocks end when the indentation decreases to zero or to a containing block’s indentation.
+Blocks are easier to understand by looking at some indented code, so let’s find the blocks in part of a small game program, shown here:  
+Python代码行可以一起组成一个块。通过代码的缩进你可以知道每一个代码块的开始和结束。这里有针对代码分块的三个规则。
+-缩进增加代表代码块开始。  
+-代码块可以在其他代码块中间。
+-当缩进减少到零或者遇到另一个代码块的缩进时代码块结束。  
+通过观察代码缩进很容易理解代码块。让我们在下面这个小游戏代码中来寻找代码块吧。  
+
+	name = 'Mary'
+	password = 'swordfish'
+	if name == 'Mary':
+		print('Hello Mary')
+		if password == 'swordfish':
+			print('Access granted.')
+		else:
+			print('Wrong password.')
+  
+The first block of code starts at the line print('Hello Mary') and contains all the lines after it. Inside this block is another block , which has only a single line in it: print('Access Granted.'). The third block is also one line long: print('Wrong password.').  
+第一个代码块开始于行print('Hello Marry')并且包含后面所有的部分。在这个代码块里面有另外一个代码块，仅仅包含一行代码：print('Access Granted').第三个代码块也仅仅有一行代码长：print('Wrong password').  
+
+### Program Execution
+### 程序执行
+
+In the previous chapter’s hello.py program, Python started executing instructions at the top of the program going down, one after another. The program execution (or simply, execution) is a term for the current instruction being executed. If you print the source code on paper and put your finger on each line as it is executed, you can think of your finger as the program execution.  
+在前面的章节中的hello.py程序，python开始执行的时候是从程序的第一行开始一直往下，一行接一行。程序执行（或简单地说，执行）是用于当前指令正在执行的一个术语。如果您在纸张上打印的源代码，把你手指过程序的每一行当着执行，你可以把你的手指作为程序执行。  
+Not all programs execute by simply going straight down, however. If you use your finger to trace through a program with flow control statements, you’ll likely find yourself jumping around the source code based on conditions, and you’ll probably skip entire clauses.  
+但并不是所有的程序都是这样简单从头到尾按顺序执行。如果你用你的手指跟随流程控制语句执行程序，你会发现你需要根据条件跳来跳去，有时候还会跳过整个子句。  
+
+## Flow Control Statements
+## 流控制语句
+## [相关视频教程](https://youtu.be/lWeCgEbk-Ro)
+
+Now, let’s explore the most important piece of flow control: the statements themselves. The statements represent the diamonds you saw in the flowchart in Figure 2-1, and they are the actual decisions your programs will make.  
+现在，让我们来探索流程控制最重要的部分：该语句本身。该声明标识你在图2-1中看到的流程图中的钻石图形部分，他们将决定你程序如何运行。  
+
+### if Statements
+### if 语句
+
+The most common type of flow control statement is the if statement. An if statement’s clause (that is, the block following the if statement) will execute if the statement’s condition is True. The clause is skipped if the condition is False.  
+if语句是流程控制语句中最常见的类型。if语句的子句（也就是指if语句下面的程序块）将被执行，如果该if语句的条件为True。如果if条件的结果为False该子句被跳过.  
+In plain English, an if statement could be read as, “If this condition is true, execute the code in the clause.” In Python, an if statement consists of the following:  
+用简单的英语，if语句可以理解为，“如果这个条件为真，则执行该子句中的代码。” 在python中if语句包含以下内容：  
+
+-The if keyword
+-A condition (that is, an expression that evaluates to True or False)
+-A colon
+-Starting on the next line, an indented block of code (called the if clause)  
+-if关键字
+-条件（也就是说，计算结果为真或假的表达式)
+-冒号
+-另起一行并且包含缩进的代码块(成为if子句)  
+
+For example, let’s say you have some code that checks to see whether someone’s name is Alice. (Pretend name was assigned some value earlier.)  
+例如，我们有一段用来检测别人的名字是否为Alice的代码。（假设名字提前赋值在一个变量中）  
+
+	if name == 'Alice':
+		print('Hi, Alice.')
+
+All flow control statements end with a colon and are followed by a new block of code (the clause). This if statement’s clause is the block with print('Hi, Alice.'). Figure 2-3 shows what a flowchart of this code would look like.  
+所有的流程控制语句都以冒号结束后面跟随一个新的代码块（子句）。这if语句的子句是代码块print('Hi,Alice').图2-3显示了此代码的流程图的样子。  
+
+![Figure 2-3](https://automatetheboringstuff.com/images/000019.jpg)
+> Figure 2-3. The flowchart for an if statement  
+
+### else Statements
+### else语句
