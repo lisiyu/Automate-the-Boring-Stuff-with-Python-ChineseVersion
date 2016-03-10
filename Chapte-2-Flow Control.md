@@ -267,14 +267,14 @@ if语句是流程控制语句中最常见的类型。if语句的子句（也就�
 In plain English, an if statement could be read as, “If this condition is true, execute the code in the clause.” In Python, an if statement consists of the following:  
 用简单的英语，if语句可以理解为，“如果这个条件为真，则执行该子句中的代码。” 在python中if语句包含以下内容：  
 
--The if keyword
--A condition (that is, an expression that evaluates to True or False)
--A colon
--Starting on the next line, an indented block of code (called the if clause)  
--if关键字
--条件（也就是说，计算结果为真或假的表达式)
--冒号
--另起一行并且包含缩进的代码块(成为if子句)  
+- The if keyword
+- A condition (that is, an expression that evaluates to True or False)
+- A colon
+- Starting on the next line, an indented block of code (called the if clause)  
+- if关键字
+- 条件（也就是说，计算结果为真或假的表达式)
+- 冒号
+- 另起一行并且包含缩进的代码块(称为if子句)  
 
 For example, let’s say you have some code that checks to see whether someone’s name is Alice. (Pretend name was assigned some value earlier.)  
 例如，我们有一段用来检测别人的名字是否为Alice的代码。（假设名字提前赋值在一个变量中）  
@@ -290,3 +290,119 @@ All flow control statements end with a colon and are followed by a new block of 
 
 ### else Statements
 ### else语句
+
+An if clause can optionally be followed by an else statement. The else clause is executed only when the if statement’s condition is False. In plain English, an else statement could be read as, “If this condition is true, execute this code. Or else, execute that code.” An else statement doesn’t have a condition, and in code, an else statement always consists of the following:  
+-The else keyword  
+-A colon
+-Starting on the next line, an indented block of code (called the else clause)  
+Returning to the Alice example, let’s look at some code that uses an else statement to offer a different greeting if the person’s name isn’t Alice.  
+一个if语句后面可跟着一个else语句。当if语句的条件为假else子句被执行。用简单的英语，一个else语句可以理解为，“如果这个条件为真，执行该代码。否则，执行其他代码“。else语句没有具体条件。在代码中，else语句以下面方式表示：  
+- else关键字
+- 一个冒号
+- 另起一行并且包含缩进的代码块(称为else子句)
+让我们回到Alice的例子，让我们来看看如果这个人的名字不是Alice使用else语句来提供不同的问候语的代码。
+
+	name = 'Bob'
+	if name == 'Alice':
+		print('Hi, Alice.')
+	else:
+		print('Hello, stranger.')
+		
+Figure 2-4 shows what a flowchart of this code would look like.
+图2-4显示了此代码的流程图的样子。
+![Figure 2-4](https://automatetheboringstuff.com/images/000106.png)
+> Figure 2-4. The flowchart for an else statement
+
+### elif Statements
+### ELIF语句
+
+While only one of the if or else clauses will execute, you may have a case where you want one of many possible clauses to execute. The elif statement is an “else if” statement that always follows an if or another elif statement. It provides another condition that is checked only if any of the previous conditions were False. In code, an elif statement always consists of the following:  
+
+- The elif keyword  
+- A condition (that is, an expression that evaluates to True or False)
+- A colon
+- Starting on the next line, an indented block of code (called the elif clause)
+Let’s add an elif to the name checker to see this statement in action.  
+虽然仅有一个if或else就能执行，但是有的情况下可能有多个不同子句需要执行。elif语句，就是一个“else is”语句,始终跟随if语句或其他elif语句。当任何前面的所有条件都是假时它提供另一个条件进行判断。在代码中，else语句以下面方式表示：  
+- elif关键字
+- 一个条件（也就是，计算结果为真或假的表达式）
+- 一个冒号
+- 另起一行并且包含缩进的代码块(称为elif子句)
+让我们把elif加到名字检查例程中看看这个语句如何执行。  
+
+	name = 'Bob'
+	age = 5
+	if name == 'Alice':
+		print('Hi, Alice.')
+	elif age < 12:
+		print('You are not Alice, kiddo.')
+		
+This time, you check the person’s age, and the program will tell them something different if they’re younger than 12. You can see the flowchart for this in Figure 2-5.  
+这次，你检查人的年龄，如果他们小于12岁程序会告诉他们不同的东西。程序执行流程图 如图2-5
+![Figure](https://automatetheboringstuff.com/images/000107.png)
+> Figure 2-5. The flowchart for an elif statement
+
+The elif clause executes if age < 12 is True and name == 'Alice' is False. However, if both of the conditions are False, then both of the clauses are skipped. It is not guaranteed that at least one of the clauses will be executed. When there is a chain of elif statements, only one or none of the clauses will be executed. Once one of the statements’ conditions is found to be True, the rest of the elif clauses are automatically skipped. For example, open a new file editor window and enter the following code, saving it as vampire.py:  
+如果年龄小于12是真并且名字是Alice为假elif语句将会执行。如果这两个条件的结果都是假的，则这两个子句都会跳过。它并不保证所有子句中的至少一个将被执行。存在多个elif语句的程序中，只有一个或没有子句被执行。一旦这些语句的条件之一被发现是真，其余elif子句将被自动跳过。例如，打开一个新的文件编辑器窗口输入以下代码，保存为vampire.py：
+
+	name = 'Dracula'
+	age = 4000
+	if name == 'Alice':
+		print('Hi, Alice.')
+	elif age < 12:
+		print('You are not Alice, kiddo.')
+	elif age > 2000:
+		print('Unlike you, Alice is not an undead, immortal vampire.')
+	elif age > 100:
+    print('You are not Alice, grannie.')
+	
+Here I’ve added two more elif statements to make the name checker greet a person with different answers based on age. Figure 2-6 shows the flowchart for this.  
+在这里，我增加了两个ELIF语句，以使名称检查同时基于年龄给不同的人不同的答案。图2-6显示了该流程图。
+![Figure 2-6](https://automatetheboringstuff.com/images/000088.png)
+> Figure 2-6. The flowchart for multiple elif statements in the vampire.py program
+
+The order of the elif statements does matter, however. Let’s rearrange them to introduce a bug. Remember that the rest of the elif clauses are automatically skipped once a True condition has been found, so if you swap around some of the clauses in vampire.py, you run into a problem. Change the code to look like the following, and save it as vampire2.py:  
+elif语句按照顺序完成事物。让我们重新排列它们引入的错误。请记住，elif子句发现一次条件为真时其余部分自动跳过。如果你在vampire2.py中换一些子句你会运行遇到错误。把你的代码改成下面的样子并保存为vampire2.py：  
+
+	name = 'Dracula'
+	age = 4000
+	if name == 'Alice':
+		print('Hi, Alice.')
+	elif age < 12:
+		print('You are not Alice, kiddo.')
+	elif age > 100:
+		print('You are not Alice, grannie.')
+	elif age > 2000:
+		print('Unlike you, Alice is not an undead, immortal vampire.')
+		
+Say the age variable contains the value 3000 before this code is executed. You might expect the code to print the string 'Unlike you, Alice is not an undead, immortal vampire.'. However, because the age > 100 condition is True (after all, 3000 is greater than 100) , the string 'You are not Alice, grannie.' is printed, and the rest of the elif statements are automatically skipped. Remember, at most only one of the clauses will be executed, and for elif statements, the order matters!   
+假设代码执行之前把变量age赋值为3000。你期望代码输出'Unlike you, Alice is not an undead, immortal vampire.'.。但是age >100已经为真了。（尽管3000比100大很多），'You are not Alice, grannie.'被打印出来，剩下的elif语句都被跳过了。对于elif语句来说最多只有一个子句被执行这是确信无疑的事实。  
+
+Figure 2-7 shows the flowchart for the previous code. Notice how the diamonds for age > 100 and age > 2000 are swapped.  
+图2-7显示了前面的代码的流程图。请注意age > 100和age > 2000流程图的交换。  
+![Figure 2-7](https://automatetheboringstuff.com/images/000089.png)
+> Figure 2-7. The flowchart for the vampire2.py program. The crossed-out path will logically never happen, because if age were greater than 2000, it would have already been greater than 100.  
+> 图2-7为vampire2.py程序的流程图。打叉的路径逻辑永远不会发生，因为如果年龄超过2000人时，它早已经大于100。  
+
+Optionally, you can have an else statement after the last elif statement. In that case, it is guaranteed that at least one (and only one) of the clauses will be executed. If the conditions in every if and elif statement are False, then the else clause is executed. For example, let’s re-create the Alice program to use if, elif, and else clauses.    
+你可以有在所有elif语句后面else语句。
+在这种情况下，可以保证子句中的至少一个（并且仅一个）将被执行。如果所有if和elif的语句的条件都是假的，那么else子句被执行。例如，让我们重新创建一个使用if,elif和else子句的Alice程序。  
+
+	name = 'Bob'
+	age = 30
+	if name == 'Alice':
+		print('Hi, Alice.')
+	elif age < 12:
+		print('You are not Alice, kiddo.')
+	else:
+		print('You are neither Alice nor a little kid.')
+		
+Figure 2-8 shows the flowchart for this new code, which we’ll save as littleKid.py.  
+图2-8展示了这个新的代码的流程图，我们将其保存为littleKid.py。  
+In plain English, this type of flow control structure would be, “If the first condition is true, do this. Else, if the second condition is true, do that. Otherwise, do something else.” When you use all three of these statements together, remember these rules about how to order them to avoid bugs like the one in Figure 2-7. First, there is always exactly one if statement. Any elif statements you need should follow the if statement. Second, if you want to be sure that at least one clause is executed, close the structure with an else statement.  
+简单的说，这种类型的流程控制结构是，“如果第一个条件为真，执行它。否则，如果第二条件为真，执行这个。否则，执行其他的事情。“当您同时使用这三个语句，记住以下的规则以避免出现图2-7中的bug。首先，总共只有一个if语句。任何 elif语句都在if语句后面。第二，如果你要确保至少有一个子句被执行，需要在代码块最后以else语句结束。
+![Figure 2-8](https://automatetheboringstuff.com/images/000090.png)
+> Figure 2-8. Flowchart for the previous littleKid.py program
+
+### while Loop Statements
+### while循环语句
