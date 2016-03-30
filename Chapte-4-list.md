@@ -102,5 +102,170 @@ While indexes start at 0 and go up, you can also use negative integers for the i
 	>>> spam[-3]
 	'bat'
 	>>> 'The ' + spam[-1] + ' is afraid of the ' + spam[-3] + '.'
-	'The elephant is afraid of the bat.'
+	'The elephant is afraid of the bat.'  
+	
+## Getting Sublists with Slices 通过切片获取子列表  
+
+Just as an index can get a single value from a list, a slice can get several values from a list, in the form of a new list. A slice is typed between square brackets, like an index, but it has two integers separated by a colon. Notice the difference between indexes and slices.  
+和索引可以从一个列表中的获取单个单个值类似，切片可以从列表获得多个值，并以一个新的列表形式显示。切片的表达形式和索引类似都是在中括号中,但是切片是两个以冒号分隔的整数值.注意索引和切片之间的差异.  
+
+	spam[2] is a list with an index (one integer).
+	spam[1:4] is a list with a slice (two integers).
+
+In a slice, the first integer is the index where the slice starts. The second integer is the index where the slice ends. A slice goes up to, but will not include, the value at the second index. A slice evaluates to a new list value. Enter the following into the interactive shell:  
+在一个切片中，第一整数是切片的开始索引。第二个整数是切片的结束索引。切片取索引值依次增加到第二个值，但不会包括在第二索引处的值。在交互窗体输入以下代码: 
+ 
+	>>> spam = ['cat', 'bat', 'rat', 'elephant']
+	>>> spam[0:4]
+	['cat', 'bat', 'rat', 'elephant']
+	>>> spam[1:3]
+	['bat', 'rat']
+	>>> spam[0:-1]
+	['cat', 'bat', 'rat']
+
+As a shortcut, you can leave out one or both of the indexes on either side of the colon in the slice. Leaving out the first index is the same as using 0, or the beginning of the list. Leaving out the second index is the same as using the length of the list, which will slice to the end of the list. Enter the following into the interactive shell:  
+你可以在切片冒号的两侧留空一个或同时留空作为一种快捷方式。第一索引值留空和使用0效果一样或者代表从列表的开头起。第二个索引值留空这将切片到列表的末尾.在交互窗体输入以下代码: 
+
+	>>> spam = ['cat', 'bat', 'rat', 'elephant']
+	>>> spam[:2]
+	['cat', 'bat']
+	>>> spam[1:]
+	['bat', 'rat', 'elephant']
+	>>> spam[:]
+	['cat', 'bat', 'rat', 'elephant']
+	
+## Getting a List’s Length with len()  获得一个列表的长度LEN（）
+
+The len() function will return the number of values that are in a list value passed to it, just like it can count the number of characters in a string value. Enter the following into the interactive shell: 
+该LEN（）函数将返回是一个列表的值的数目，就像它可以返回一个字符串值的字符长度。在交互窗体输入以下代码:
+
+	>>> spam = ['cat', 'dog', 'moose']
+	>>> len(spam)
+	3 
+
+## Changing Values in a List with Indexes 通过索引改变表变值
+
+Normally a variable name goes on the left side of an assignment statement, like spam = 42. However, you can also use an index of a list to change the value at that index. For example, spam[1] = 'aardvark' means “Assign the value at index 1 in the list spam to the string 'aardvark'.” Enter the following into the interactive shell:  
+通常，变量名在赋值语句的左边，如spam = 42.同样的您也可以使用列表的索引来修改该索引处的数值。例如，spam[1] = 'aardvark' 的意思是将spam列表中索引1的值修改为字符串'aardvark'。 在交互窗体输入以下代码: 
+
+	>>> spam = ['cat', 'bat', 'rat', 'elephant']
+	>>> spam[1] = 'aardvark'
+	>>> spam
+	['cat', 'aardvark', 'rat', 'elephant']
+	>>> spam[2] = spam[1]
+	>>> spam
+	['cat', 'aardvark', 'aardvark', 'elephant']
+	>>> spam[-1] = 12345
+	>>> spam
+	['cat', 'aardvark', 'aardvark', 12345]
+
+## List Concatenation and List Replication列表的连接和复制
+
+The + operator can combine two lists to create a new list value in the same way it combines two strings into a new string value. The * operator can also be used with a list and an integer value to replicate the list. Enter the following into the interactive shell:  
+
++运算符可以将两个列表相加创建一个新的列表值，它是将两个列表字符串合并到一个新的列表.*运算符也可以将列表复制相应的整数次组成新的列表。输入以下内容到交互窗体:  
+
+	>>> [1, 2, 3] + ['A', 'B', 'C']
+	[1, 2, 3, 'A', 'B', 'C']
+	>>> ['X', 'Y', 'Z'] * 3
+	['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z']
+	>>> spam = [1, 2, 3]
+	>>> spam = spam + ['A', 'B', 'C']
+	>>> spam
+	[1, 2, 3, 'A', 'B', 'C']
+	
+## Removing Values from Lists with del Statements用del语句删除列表中的值
+
+The del statement will delete values at an index in a list. All of the values in the list after the deleted value will be moved up one index. For example, enter the following into the interactive shell:  
+del语句将列表中的一个索引中的值删除。在索引值被删除后之后，列表中的值将上移一个索引。例如，输入以下内容到交互窗体：
+
+	>>> spam = ['cat', 'bat', 'rat', 'elephant']
+	>>> del spam[2]
+	>>> spam
+	['cat', 'bat', 'elephant']
+	>>> del spam[2]
+	>>> spam
+	['cat', 'bat']
+	
+The del statement can also be used on a simple variable to delete it, as if it were an “unassignment” statement. If you try to use the variable after deleting it, you will get a NameError error because the variable no longer exists.  
+del语句也可以用来删除一个变量，就好像它是一个“取消分配”的声明语句。如果你尝试在删除后使用变量，你会得到一个NameError错误，因为变量已经不存在。  
+In practice, you almost never need to delete simple variables. The del statement is mostly used to delete values from lists.  
+在实践中，你几乎永远不需要删除变量。 del语句主要是用来从列表中删除值。  
+
+## Working with Lists 用列表开展工作
+
+When you first begin writing programs, it’s tempting to create many individual variables to store a group of similar values. For example, if I wanted to store the names of my cats, I might be tempted to write code like this:  
+当你第一次开始写程序，很可能创建许多单独的变量来存储一组类似的值。例如，我想保存我的猫的名字，我可能会写这样的代码：  
+
+	catName1 = 'Zophie'
+	catName2 = 'Pooka'
+	catName3 = 'Simon'
+	catName4 = 'Lady Macbeth'
+	catName5 = 'Fat-tail'
+	catName6 = 'Miss Cleo'
+	
+(I don’t actually own this many cats, I swear.) It turns out that this is a bad way to write code. For one thing, if the number of cats changes, your program will never be able to store more cats than you have variables. These types of programs also have a lot of duplicate or nearly identical code in them. Consider how much duplicate code is in the following program, which you should enter into the file editor and save as allMyCats1.py:  
+(我发誓,我实际上并不拥有这么多猫。)事实证明，这是一个糟糕的代码实现方​​式。一方面，如果猫的数量变化，你的程序将永远无法存储比你变量更多的猫。这些类型的程序也有很多重复或几乎相同的代码。想想在下面的程序有多少重复的代码，进入文件编辑器，并保存为allMyCats1.py：  
+
+	print('Enter the name of cat 1:')
+	catName1 = input()
+	print('Enter the name of cat 2:')
+	catName2 = input()
+	print('Enter the name of cat 3:')
+	catName3 = input()
+	print('Enter the name of cat 4:')
+	catName4 = input()
+	print('Enter the name of cat 5:')
+	catName5 = input()
+	print('Enter the name of cat 6:')
+	catName6 = input()
+	print('The cat names are:')
+	print(catName1 + ' ' + catName2 + ' ' + catName3 + ' ' + catName4 + ' ' +
+	catName5 + ' ' + catName6)
+	
+Instead of using multiple, repetitive variables, you can use a single variable that contains a list value. For example, here’s a new and improved version of the allMyCats1.py program. This new version uses a single list and can store any number of cats that the user types in. In a new file editor window, type the following source code and save it as allMyCats2.py:  
+你可以使用一个包含列表值的单变量而不是使用多个重复的变量。例如，这里新的allMyCats1.py程序改进的版本.新版本使用一个单独的列表，并可以存储任意数量的猫，在用户键入一个新的文件编辑器窗口中，键入下面的源代码，并保存为allMyCats2.py:  
+
+	catNames = []
+	while True:
+		print('Enter the name of cat ' + str(len(catNames) + 1) +
+		  ' (Or enter nothing to stop.):')
+		name = input()
+		if name == '':
+			break
+		catNames = catNames + [name] # list concatenation
+	print('The cat names are:')
+	for name in catNames:
+		print('  ' + name)
+		
+When you run this program, the output will look something like this:  
+当你运行这个程序，输出会是这个样子：  
+
+	Enter the name of cat 1 (Or enter nothing to stop.):
+	Zophie
+	Enter the name of cat 2 (Or enter nothing to stop.):
+	Pooka
+	Enter the name of cat 3 (Or enter nothing to stop.):
+	Simon
+	Enter the name of cat 4 (Or enter nothing to stop.):
+	Lady Macbeth
+	Enter the name of cat 5 (Or enter nothing to stop.):
+	Fat-tail
+	Enter the name of cat 6 (Or enter nothing to stop.):
+	Miss Cleo
+	Enter the name of cat 7 (Or enter nothing to stop.):
+
+	The cat names are:
+	  Zophie
+	  Pooka
+	  Simon
+	  Lady Macbeth
+	  Fat-tail
+	  Miss Cleo
+	  
+The benefit of using a list is that your data is now in a structure, so your program is much more flexible in processing the data than it would be with several repetitive variables.  
+使用列表的好处是将你的数据现存在一个结构中，所以程序在处理数据时比几个重复变量更加灵活。
+
+## Using for Loops with Lists  使用for循环使用列表
+## [相关教学视频](https://youtu.be/umTnflPbYww)
 
