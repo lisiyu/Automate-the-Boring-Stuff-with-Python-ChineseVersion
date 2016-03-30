@@ -22,18 +22,19 @@ A list is a value that contains multiple values in an ordered sequence. The term
 	   ['cat', 'bat', 'rat', 'elephant']
 
 The spam variable is still assigned only one value: the list value. But the list value itself contains other values. The value [] is an empty list that contains no values, similar to '', the empty string.  
-变量spam还是只分配了一个值：列表值。但列表值本身包含其他值。列表[]不包含任何值，类似于''空字符串/我们成为空列表。
+变量spam还是只分配了一个值：列表值。但列表值本身包含其他值。列表[]不包含任何值，类似于''空字符串/我们称为空列表。
 
 ## Getting Individual Values in a List with Indexes
 ## 用索引来访问列表中的项目值
 
 Say you have the list ['cat', 'bat', 'rat', 'elephant'] stored in a variable named spam. The Python code spam[0] would evaluate to 'cat', and spam[1] would evaluate to 'bat', and so on. The integer inside the square brackets that follows the list is called an index. The first value in the list is at index 0, the second value is at index 1, the third value is at index 2, and so on. Figure 4-1 shows a list value assigned to spam, along with what the index expressions would evaluate to.  
-假设你有一个列表['cat', 'bat', 'rat', 'elephant']存储在一个变量spam中.Python代码会将spam[0]值识别为为“cat”，spam[2]识别为“bat”，依此类推。列表中方括号内的整数称为索引.列表中的第一个值是在索引0，第二个值是在索引1中，第三个值是在索引2，依此类推.图4-1显示分配给spam列表的值及对应索引表达式。  
+假设你有一个列表['cat', 'bat', 'rat', 'elephant']存储在一个变量spam中.Python代码会将spam[0]值识别为为“cat”，spam[1]识别为“bat”，依此类推。列表中方括号内的整数称为索引.列表中的第一个值是在索引0，第二个值是在索引1中，第三个值是在索引2，依此类推.图4-1显示分配给spam列表的值及对应索引表达式。
+  
 ![图4-1](https://automatetheboringstuff.com/images/000074.png)
 > Figure 4-1. A list value stored in the variable spam, showing which value each index refers to  
 
 For example, type the following expressions into the interactive shell. Start by assigning a list to the variable spam.  
-例如，键入下面的表达式到交互窗体。给变量spam赋值一个列表开始。  
+例如，键入下面的表达式到交互窗体。我们从给变量spam赋值一个列表开始学起。  
 
 	   >>> spam = ['cat', 'bat', 'rat', 'elephant']
 	   >>> spam[0]
@@ -54,7 +55,7 @@ For example, type the following expressions into the interactive shell. Start by
 Notice that the expression 'Hello ' + spam[0] ➊ evaluates to 'Hello ' + 'cat' because spam[0] evaluates to the string 'cat'. This expression in turn evaluates to the string value 'Hello cat'   
 请注意，表达“Hello”+spam[0](1)计算结果为'Hello'+'cat'，因为spam[0]计算得到字符串'cat'。这个表达式的字符串值“Hello cat"  
 Python will give you an IndexError error message if you use an index that exceeds the number of values in your list value.  
-如果使用超过列表值的值数的索引Python将会给你一个IndexError错误消息.  
+如果使用超过列表值项目数的索引值Python将会给你一个IndexError错误消息.  
 
 	>>> spam = ['cat', 'bat', 'rat', 'elephant']
 	>>> spam[10000]
@@ -136,8 +137,8 @@ As a shortcut, you can leave out one or both of the indexes on either side of th
 	
 ## Getting a List’s Length with len()  获得一个列表的长度LEN（）
 
-The len() function will return the number of values that are in a list value passed to it, just like it can count the number of characters in a string value. Enter the following into the interactive shell: 
-该LEN（）函数将返回是一个列表的值的数目，就像它可以返回一个字符串值的字符长度。在交互窗体输入以下代码:
+The len() function will return the number of values that are in a list value passed to it, just like it can count the number of characters in a string value. Enter the following into the interactive shell:   
+该LEN（）函数将返回是一个列表的项目的数目，就像它可以返回一个字符串值的字符长度。在交互窗体输入以下代码:
 
 	>>> spam = ['cat', 'dog', 'moose']
 	>>> len(spam)
@@ -177,7 +178,7 @@ The + operator can combine two lists to create a new list value in the same way 
 ## Removing Values from Lists with del Statements用del语句删除列表中的值
 
 The del statement will delete values at an index in a list. All of the values in the list after the deleted value will be moved up one index. For example, enter the following into the interactive shell:  
-del语句将列表中的一个索引中的值删除。在索引值被删除后之后，列表中的值将上移一个索引。例如，输入以下内容到交互窗体：
+del语句将列表中指定索引中的值删除。在索引值被删除后之后，列表中的值将上移一个索引。例如，输入以下内容到交互窗体：
 
 	>>> spam = ['cat', 'bat', 'rat', 'elephant']
 	>>> del spam[2]
@@ -264,8 +265,9 @@ When you run this program, the output will look something like this:
 	  Miss Cleo
 	  
 The benefit of using a list is that your data is now in a structure, so your program is much more flexible in processing the data than it would be with several repetitive variables.  
-使用列表的好处是将你的数据现存在一个结构中，所以程序在处理数据时比几个重复变量更加灵活。
+使用列表的好处是将你的数据结构化，所以程序在处理数据时比几个重复变量更加灵活。
 
 ## Using for Loops with Lists  使用for循环使用列表
 ## [相关教学视频](https://youtu.be/umTnflPbYww)
+
 
