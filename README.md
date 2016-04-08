@@ -9,7 +9,7 @@
 - [x] Chapter 0 – Introduction
 - [x] Chapter 1 – Python Basics
 - [x] Chapter 2 – Flow Control
-- [ ] Chapter 3 – Functions
+- [x] Chapter 3 – Functions
 - [ ] Chapter 4 – Lists
 - [ ] Chapter 5 – Dictionaries and Structuring Data
 - [ ] Chapter 6 – Manipulating Strings
