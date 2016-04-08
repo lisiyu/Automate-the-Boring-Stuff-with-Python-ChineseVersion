@@ -801,4 +801,4 @@ Run this program in IDLE. This program has an infinite loop with no break statem
 By using expressions that evaluate to True or False (also called conditions), you can write programs that make decisions on what code to execute and what code to skip. You can also execute code over and over again in a loop while a certain condition evaluates to True. The break and continue statements are useful if you need to exit a loop or jump back to the start.  
 These flow control statements will let you write much more intelligent programs. There’s another type of flow control that you can achieve by writing your own functions, which is the topic of the next chapter.  
 通过计算结果为true或false（也称为条件）的表达式，你可以让程序决定哪些代码需要执行哪些代码需要跳过.您也可以在条件的计算结果为真时让代码一遍又一遍地循环执行。break和continue语句是非常有用的，如果你需要退出循环或跳转到循环开始.  
-这些流程控制语句可以让你写出更智能的程序。你可以通过编写自己的函数实现另一种类型的流程控制，这是下一个章节的内容。
+这些流程控制语句可以让你写出更智能的程序。你可以通过编写自己的函数实现另一种类型的流程控制，这是下一个章节的内容。  
