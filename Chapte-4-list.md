@@ -270,4 +270,44 @@ The benefit of using a list is that your data is now in a structure, so your pro
 ## Using for Loops with Lists  使用for循环使用列表
 ## [相关教学视频](https://youtu.be/umTnflPbYww)
 
+In Chapter 2, you learned about using for loops to execute a block of code a certain number of times. Technically, a for loop repeats the code block once for each value in a list or list-like value. For example, if you ran this code:  
+在第二章中，您了解了使用循环让代码块重复执行若干次。从技术上讲，一个for循环中的代码块重复执行相当于按照列表或类似列表的值中的每一个值执行一次。例如，下面的代码：
 
+	for i in range(4):
+		print(i)
+	
+the output of this program would be as follows:  
+代码执行结果如下
+
+	0
+	1
+	2
+	3
+	
+This is because the return value from range(4) is a list-like value that Python considers similar to [0, 1, 2, 3]. The following program has the same output as the previous one:    
+这是因为range(4)的返回值Python认定类似于列表值[0，1，2，3]。下面的程序具有与前一个相同的输出：  
+
+	for i in [0, 1, 2, 3]:
+		print(i)
+
+What the previous for loop actually does is loop through its clause with the variable i set to a successive value in the [0, 1, 2, 3] list in each iteration.   前面的for循环实际上是通过i每次值取列表[0，1，2，3]的索引值为连续递增变量子句实现。
+ > NOTE In this book, I use the term list-like to refer to data types that are technically named sequences. You don’t need to know the technical definitions of this term, though.  
+> 注意 在这本书中，我使用术语列表类似指代在技术上命名类似列表的数据类型。你不需要知道这个词的技术定义.
+
+A common Python technique is to use range(len(someList)) with a for loop to iterate over the indexes of a list. For example, enter the following into the interactive shell:  
+一个常见的​​Python用法是使用range(LEN(someList))for循环遍历列表的索引。例如，输入以下内容带交互窗体：  
+
+	>>> supplies = ['pens', 'staplers', 'flame-throwers', 'binders']
+	>>> for i in range(len(supplies)):
+		print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+
+	Index 0 in supplies is: pens
+	Index 1 in supplies is: staplers
+	Index 2 in supplies is: flame-throwers
+	Index 3 in supplies is: binders
+
+Using range(len(supplies)) in the previously shown for loop is handy because the code in the loop can access the index (as the variable i) and the value at that index (as supplies[i]). Best of all, range(len(supplies)) will iterate through all the indexes of supplies, no matter how many items it contains.  
+在先前所示的range(len(supplies)) 是非常方便的，因为在循环的代码可以访问的索引（作为变量i）和值索引处(supplies[i])。最重要的是range(len(supplies))可以遍历所有索引对应的内容,无论包含多少个项目。
+
+## The in and not in Operators 
+## in和not in操作符
