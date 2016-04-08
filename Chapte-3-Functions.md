@@ -660,4 +660,4 @@ The output of this program could look something like this:
 ### Input Validation
 ### 输入验证
 Add try and except statements to the previous project to detect whether the user types in a noninteger string. Normally, the int() function will raise a ValueError error if it is passed a noninteger string, as in int('puppy'). In the except clause, print a message to the user saying they must enter an integer.  
-尝试用except语句来提前检测用户输入是否为非整形数据类型。通常情况下，如果输入是非整数字符串int()函数将引发ValueError错误，例如int('puppy').在except语句，打印一个消息告诉用户说他们必须输入一个整数。
+尝试用except语句来提前检测用户输入是否为非整形数据类型。通常情况下，如果输入是非整数字符串int()函数将引发ValueError错误，例如int('puppy').在except语句，打印一个消息告诉用户说他们必须输入一个整数。  
